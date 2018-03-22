@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.openxc.openxcstarter"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/siyahbeyaz"
+        android:label="DRIVE"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".StarterActivity"
+            android:label="DRIVE"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.openxc.VehicleManager" />
+
+        <activity android:name=".Book_Activity" />
+        <activity android:name=".LeaderBoard" />
+        <activity android:name=".UserName" />
+        <activity android:name=".IgnitionStatus" />
+        <activity android:name=".Score" />
+        <activity android:name=".Distance" />
+        <activity android:name=".FuelLevel" />
+        <activity android:name=".NearestGasStation" />
+        <activity android:name=".EmergencyButton" />
+        <activity android:name=".Speed" />
+        <activity android:name=".GearPosition" />
+        <activity android:name=".AcceleratorPedalPosition" />
+        <activity android:name=".BrakePedalPosition" />
+        <activity android:name=".Location" />
+        <activity android:name=".Settings" />
+        <activity android:name=".AchievementActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+    </application>
+
+</manifest>
