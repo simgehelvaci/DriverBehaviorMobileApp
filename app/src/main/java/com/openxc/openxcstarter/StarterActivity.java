@@ -13,8 +13,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.openxc.VehicleManager;
+import com.openxc.measurements.FuelConsumed;
 import com.openxc.measurements.FuelLevel;
 import com.openxc.measurements.AcceleratorPedalPosition;
 import com.openxc.measurements.BrakePedalStatus;
@@ -50,14 +52,17 @@ public class StarterActivity extends Activity {
     private long gForceTimer = -1;
     private double gForceVelocity = -1;
     private final double gConstant = 9.80665;
-    private int statusPercentage = 100;
+    public static int statusPercentage = 100;
     private String gearPosition = "neutral";
     private Double pedalPos = 0.0;
     public static String IGNITION ;
     public static String DISTANCE;
     public static String FUEL;
+    public static String GEAR;
+    public static String SPEED;
     private double gForce = -1;
     private double weight = 0.5;
+    Score scoreClass = new Score();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,14 +114,6 @@ public class StarterActivity extends Activity {
         throttlePos = (ProgressBar) findViewById(R.id.throttlePos);
         enginePos = (ProgressBar) findViewById(R.id.enginePos);
 
-//        gR = (TextView) findViewById(R.id.gR);
-//        gN = (TextView) findViewById(R.id.gN);
-//        g1 = (TextView) findViewById(R.id.g1);
-//        g2 = (TextView) findViewById(R.id.g2);
-//        g3 = (TextView) findViewById(R.id.g3);
-//        g4 = (TextView) findViewById(R.id.g4);
-//        g5 = (TextView) findViewById(R.id.g5);
-//        g6 = (TextView) findViewById(R.id.g6);
 
         statusBar.setMax(statusPercentage);
 
@@ -169,7 +166,8 @@ public class StarterActivity extends Activity {
             neutralGasDetectedTimer = time;
         }
         else if (time - neutralGasDetectedTimer > 3500) {
-            setStatus(statusPercentage - 1);
+          setStatus(statusPercentage - 1);
+            Toast.makeText(getApplicationContext(), "Throttle while gear neutral position", Toast.LENGTH_LONG).show();
             warningText.setText("Throttle while gear neutral position");
             neutralGasDetectedTimer = -1;
         }
@@ -181,6 +179,7 @@ public class StarterActivity extends Activity {
         }
         else if (time - brakePedalDetectedTimer > 2500) {
             setStatus(statusPercentage - 1);
+            Toast.makeText(getApplicationContext(), "Brake Pedal Overused!", Toast.LENGTH_LONG).show();
             warningText.setText("Brake Pedal Overused!");
             brakePedalDetectedTimer = -1;
         }
@@ -202,6 +201,7 @@ public class StarterActivity extends Activity {
         }
         else if (acceleratorPedalOver70 && over70){
             if (time - pedalOver70Timer > 7000){
+                Toast.makeText(getApplicationContext(), "Aggressive acceleration", Toast.LENGTH_LONG).show();
                 warningText.setText("Aggressive acceleration");
                 setStatus(statusPercentage - 1);
 //                AlertDialog.Builder builder = new AlertDialog.Builder(findViewById(android.R.id.content).getContext());
@@ -274,6 +274,7 @@ public class StarterActivity extends Activity {
             });
         }
     };
+
     FuelLevel.Listener mFuelLevelListener = new FuelLevel.Listener() {
         @Override
         public void receive(Measurement measurement) {
@@ -282,10 +283,10 @@ public class StarterActivity extends Activity {
                 public void run() {
 
 
-                    mFuelLevelStatusView.setText("Ignition:"
+                    mFuelLevelStatusView.setText("Fuel:"
                             + FuelLevelStatus.getValue().toString());
                     FUEL= (FuelLevelStatus.getValue().toString());
-                    ///DENEMEDİMM
+                    Log.d("fuel:",FUEL);
 
                 }
             });
@@ -310,6 +311,9 @@ public class StarterActivity extends Activity {
                     gForceTracker(speed.getValue().doubleValue(), speed.getBirthtime());
                     mVehicleSpeedView.setText("Vehicle speed (km/h): "
                             + speed.getValue().doubleValue());
+
+                    SPEED= (speed.getValue().toString());
+                    Log.d("speed:",SPEED);
                 }
             });
         }
@@ -430,55 +434,14 @@ public class StarterActivity extends Activity {
             });
 
             gearPosition = position.toString();
-//            gearChanged(gearPosition);
+            GEAR=position.getValue().toString();
+            Log.d("Gear",GEAR);
         }
     };
 
 
 
-    private void gearChanged(String gearPosition) {
-        resetBg();
-        Log.d("GearPos", gearPosition);
-        switch (gearPosition.toLowerCase()) {
-            case "neutral":
-//                gN.setBackgroundColor(Color.parseColor("#ffa500"));
-//                gN.setBackgroundResource(R.color.orange);
-                break;
-            case "reverse":
-//                gR.setBackgroundResource(R.color.orange);
-                break;
-            case "first":
-//                g1.setBackgroundResource(R.color.orange);
-//                g1.setTextColor(Color.parseColor("#ffa500"));
-                break;
-            case "second":
-//                g2.setBackgroundResource(R.color.orange);
-//                g1.setTextColor(Color.parseColor("#ffa500"));
-                break;
-            case "third":
-//                g3.setBackgroundResource(R.color.orange);
-                break;
-            case "fourth":
-//                g4.setBackgroundResource(R.color.orange);
-                break;
-            case "five":
-//                g5.setBackgroundResource(R.color.orange);
-                break;
-            case "six":
-//                g6.setBackgroundResource(R.color.orange);
-                break;
-        }
-    }
-    private void resetBg() {
-//        gN.setBackgroundResource(R.color.white);
-//        gR.setBackgroundResource(R.color.white);
-//        g1.setBackgroundResource(R.color.white);
-//        g2.setBackgroundResource(R.color.white);
-//        g3.setBackgroundResource(R.color.white);
-//        g4.setBackgroundResource(R.color.white);
-//        g5.setBackgroundResource(R.color.white);
-//        g6.setBackgroundResource(R.color.white);
-    }
+
 
     private ServiceConnection mConnection = new ServiceConnection() {
         // Called when the connection with the VehicleManager service is
@@ -496,6 +459,8 @@ public class StarterActivity extends Activity {
             // have an EngineSpeed.Listener (see above, mSpeedListener) and here
             // we request that the VehicleManager call its receive() method
             // whenever the EngineSpeed changes
+
+            mVehicleManager.addListener(FuelLevel.class,  mFuelLevelListener);
             mVehicleManager.addListener(EngineSpeed.class, mSpeedListener);
             mVehicleManager.addListener(VehicleSpeed.class, mVehicleListener);
             mVehicleManager.addListener(Odometer.class, mOdometerListener);

@@ -112,15 +112,15 @@
                 android:progress="50"
                 android:rotation="-90" />
 
-        <TextView
-            android:visibility="invisible"
-            android:id="@+id/odometerLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/statusBar"
-            android:text="Distance"
-            android:textSize="30sp"/>
+    <TextView
+        android:id="@+id/odometerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/odometer"
+        android:layout_below="@+id/statusBar"
+        android:text="Distance"
+        android:textSize="30sp"
+        android:visibility="invisible" />
     <TextView
         android:visibility="invisible"
         android:id="@+id/odometer"
