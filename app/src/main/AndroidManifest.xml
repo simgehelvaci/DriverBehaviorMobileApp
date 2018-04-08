@@ -18,6 +18,8 @@
         android:icon="@drawable/siyahbeyaz"
         android:label="DRIVE"
         android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.android.gms.games.APP_ID"
+            android:value="@string/app_id" />
         <activity
             android:name=".StarterActivity"
             android:label="DRIVE"

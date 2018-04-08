@@ -71,6 +71,8 @@ public class StarterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_starter);
 
+
+
         lstBook = new ArrayList<>();
         lstBook.add(new Book("Achievements","Google Play Services","Description",R.drawable.achv));
         lstBook.add(new Book("LeaderBoard","Google Play Services","Description",R.drawable.lb));
