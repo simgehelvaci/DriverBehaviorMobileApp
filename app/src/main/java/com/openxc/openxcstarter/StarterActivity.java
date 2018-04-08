@@ -60,6 +60,9 @@ public class StarterActivity extends Activity {
     public static String FUEL;
     public static String GEAR;
     public static String SPEED;
+    public static String ACCELERATORPEDALPOSITION;
+    public static String BRAKEPEDALPOSITION;
+
     private double gForce = -1;
     private double weight = 0.5;
     Score scoreClass = new Score();
@@ -337,7 +340,7 @@ public class StarterActivity extends Activity {
                     pedalPos = position.getValue().doubleValue();
                     mAcceleratorPedalPositionView.setText("AcceleratorPedalPosition value: "
                             + pedalPos);
-
+                        ACCELERATORPEDALPOSITION = pedalPos.toString();
                     //checkTimeSince(position.getBirthtime(), true);
 
                     throttlePos.setProgress(pedalPos.intValue());
@@ -378,7 +381,7 @@ public class StarterActivity extends Activity {
                     mBrakePedalView.setText("BrakePedalStatus value: "
                             + brakePos);
 
-
+                    BRAKEPEDALPOSITION = brakePos.toString();
 
 
                     if (brakePos.booleanValue()) {
@@ -407,7 +410,7 @@ public class StarterActivity extends Activity {
                     // the latest value
                     mOdometerView.setText(distance.getValue().toString());
                     DISTANCE=distance.getValue().toString();
-                    Log.d("heytbeee",DISTANCE);
+                    Log.d("distance",DISTANCE);
                 }
             });
         }
