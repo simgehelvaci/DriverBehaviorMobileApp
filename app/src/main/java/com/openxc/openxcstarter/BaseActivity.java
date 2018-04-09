@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -32,7 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class StarterActivity extends BaseActivity {
+public class BaseActivity extends AppCompatActivity {
     private static final String TAG = "StarterActivity";
     List<Book> lstBook ;
     private TextView mIgnitionStatusView;
@@ -48,7 +49,7 @@ public class StarterActivity extends BaseActivity {
     private ProgressBar statusBar, throttlePos, enginePos;
     private TextView statusBarText;
     private TextView warningText;
-//    private TextView gR, gN, g1, g2, g3, g4, g5, g6;
+    //    private TextView gR, gN, g1, g2, g3, g4, g5, g6;
     private long gForceTimer = -1;
     private double gForceVelocity = -1;
     private final double gConstant = 9.80665;
@@ -63,84 +64,83 @@ public class StarterActivity extends BaseActivity {
     public static String ACCELERATORPEDALPOSITION;
     public static String BRAKEPEDALPOSITION;
 
+    int status = 100;
+
+
     private double gForce = -1;
     private double weight = 0.5;
-    Score scoreClass = new Score();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_starter);
-
-
-
-        lstBook = new ArrayList<>();
-        lstBook.add(new Book("Achievements","Google Play Services","Description",R.drawable.achv));
-        lstBook.add(new Book("LeaderBoard","Google Play Services","Description",R.drawable.lb));
-        lstBook.add(new Book("Username","Google Play Services","Description",R.drawable.users));
-        lstBook.add(new Book("Ignition Status","OpenXC Input","Description",R.drawable.sw));
-        lstBook.add(new Book("Score","Evaluation","Description",R.drawable.score));
-        lstBook.add(new Book("Distance","OpenXC Input","Description",R.drawable.route));
-        lstBook.add(new Book("Fuel Level","OpenXC Input","Description",R.drawable.fuel));
-        lstBook.add(new Book("Nearest Gas Station","Google Maps","Description",R.drawable.gas));
-        lstBook.add(new Book("Emergency Button","SMS_Sender","Description",R.drawable.siren));
-        lstBook.add(new Book("Speed","OpenXC Input","Description",R.drawable.speed));
-        lstBook.add(new Book("Gear Position","OpenXC Input","Description",R.drawable.gearshift));
-        lstBook.add(new Book("Accelerator Pedal Position","OpenXC Input","Description",R.drawable.pedals));
-        lstBook.add(new Book("Brake Pedal Position","OpenXC Input","Description",R.drawable.pedal));
-
-        lstBook.add(new Book("Location","Google Maps","Description",R.drawable.location));
-        lstBook.add(new Book("Settings","Settings","Description",R.drawable.settings));
-
-
-
-        RecyclerView myrv = (RecyclerView) findViewById(R.id.recyclerview_id);
-        RecyclerViewAdapter myAdapter = new RecyclerViewAdapter(this,lstBook);
-        myrv.setLayoutManager(new GridLayoutManager(this,3));
-        myrv.setAdapter(myAdapter);
-
-
 
 
 
         // grab a reference to the engine speed text object in the UI, so we can
         // manipulate its value later from Java code
-        mFuelLevelStatusView = (TextView) findViewById(R.id.fuel_level);
-        mEngineSpeedView = (TextView) findViewById(R.id.engine_speed);
-        mVehicleSpeedView = (TextView) findViewById(R.id.vehicle_speed);
-        mOdometerView = (TextView) findViewById(R.id.odometer);
-        mAcceleratorPedalPositionView = (TextView) findViewById(R.id.accelerator_pedal);
-        mGearPositionView = (TextView) findViewById(R.id.gear_position);
-        mBrakePedalView = (TextView) findViewById(R.id.brake_pedal_position);
-        mGForceView= (TextView) findViewById(R.id.g_view);
-        statusBar = (ProgressBar) findViewById(R.id.statusBar);
-        statusBarText = (TextView) findViewById(R.id.statusBarText);
-        warningText = (TextView) findViewById(R.id.warningText);
-        mIgnitionStatusView = (TextView) findViewById(R.id.ignitionStatus);
-        throttlePos = (ProgressBar) findViewById(R.id.throttlePos);
-        enginePos = (ProgressBar) findViewById(R.id.enginePos);
-
-
-        statusBar.setMax(statusPercentage);
-
-        setStatus(getStatus());
+//        mFuelLevelStatusView = (TextView) findViewById(R.id.fuel_level);
+//        mEngineSpeedView = (TextView) findViewById(R.id.engine_speed);
+//        mVehicleSpeedView = (TextView) findViewById(R.id.vehicle_speed);
+//        mOdometerView = (TextView) findViewById(R.id.odometer);
+//        mAcceleratorPedalPositionView = (TextView) findViewById(R.id.accelerator_pedal);
+//        mGearPositionView = (TextView) findViewById(R.id.gear_position);
+//        mBrakePedalView = (TextView) findViewById(R.id.brake_pedal_position);
+//        mGForceView= (TextView) findViewById(R.id.g_view);
+//        statusBar = (ProgressBar) findViewById(R.id.statusBar);
+//        statusBarText = (TextView) findViewById(R.id.statusBarText);
+//        warningText = (TextView) findViewById(R.id.warningText);
+//        mIgnitionStatusView = (TextView) findViewById(R.id.ignitionStatus);
+//        throttlePos = (ProgressBar) findViewById(R.id.throttlePos);
+//        enginePos = (ProgressBar) findViewById(R.id.enginePos);
+//
+//
+//        statusBar.setMax(statusPercentage);
+//
+//        setStatus(statusPercentage);
     }
 
-    private void setStatus(int percentage) {
-        if (percentage < 0) { percentage = 0; }
-        statusPercentage = percentage;
-        statusBar.setProgress(percentage);
 
-        String text = Integer.toString(percentage) + "%";
-        statusBarText.setText(text);
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void onStatusUpdate() {
+
+    }
+
+    public void onIgnitionUpdate() {
+
+    }
+
+
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        // When the activity goes into the background or exits, we want to make
+        // sure to unbind from the service to avoid leaking memory
+        if(mVehicleManager != null) {
+            Log.i(TAG, "Unbinding from Vehicle Manager");
+            // Remember to remove your listeners, in typical Android
+            // fashion.
+            mVehicleManager.removeListener(EngineSpeed.class,
+                    mSpeedListener);
+            unbindService(mConnection);
+            mVehicleManager = null;
+        }
     }
 
     @Override
-    public void onStatusUpdate() {
-        super.onStatusUpdate();
-        setStatus(getStatus());
+    public void onResume() {
+        super.onResume();
+        // When the activity starts up or returns from the background,
+        // re-connect to the VehicleManager so we can receive updates.
+        if(mVehicleManager == null) {
+            Intent intent = new Intent(this, VehicleManager.class);
+            bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+        }
     }
-
-
 
     boolean acceleratorPedalOver70 = false;
     long pedalOver70Timer = 0;
@@ -152,9 +152,9 @@ public class StarterActivity extends BaseActivity {
             neutralGasDetectedTimer = time;
         }
         else if (time - neutralGasDetectedTimer > 3500) {
-          setStatus(statusPercentage - 1);
+            status = statusPercentage - 1;
+            onStatusUpdate();
             Toast.makeText(getApplicationContext(), "Throttle while gear neutral position", Toast.LENGTH_LONG).show();
-            warningText.setText("Throttle while gear neutral position");
             neutralGasDetectedTimer = -1;
         }
     }
@@ -164,9 +164,9 @@ public class StarterActivity extends BaseActivity {
             brakePedalDetectedTimer = time;
         }
         else if (time - brakePedalDetectedTimer > 2500) {
-            setStatus(statusPercentage - 1);
+            status = statusPercentage - 1;
+            onStatusUpdate();
             Toast.makeText(getApplicationContext(), "Brake Pedal Overused!", Toast.LENGTH_LONG).show();
-            warningText.setText("Brake Pedal Overused!");
             brakePedalDetectedTimer = -1;
         }
     }
@@ -175,7 +175,6 @@ public class StarterActivity extends BaseActivity {
         gForce = gForce * 1/gConstant * (1 - weight) + weight * ((velocity) - gForceVelocity) / 3.6 * (1000 / Double.valueOf(birthtime - gForceTimer));
         String gString = String.format(Locale.ENGLISH, "%.10f", gForce);
         //Log.d("gforce", gString);
-        mGForceView.setText(gString);
         gForceTimer = birthtime;
         gForceVelocity = velocity;
     }
@@ -188,8 +187,8 @@ public class StarterActivity extends BaseActivity {
         else if (acceleratorPedalOver70 && over70){
             if (time - pedalOver70Timer > 7000){
                 Toast.makeText(getApplicationContext(), "Aggressive acceleration", Toast.LENGTH_LONG).show();
-                warningText.setText("Aggressive acceleration");
-                setStatus(statusPercentage - 1);
+                status = statusPercentage - 1;
+                onStatusUpdate();
 //                AlertDialog.Builder builder = new AlertDialog.Builder(findViewById(android.R.id.content).getContext());
 //                builder.setTitle("Aggressive acceleration");
 //                builder.setMessage("Losing points...");
@@ -230,14 +229,12 @@ public class StarterActivity extends BaseActivity {
             // In order to modify the UI, we have to make sure the code is
             // running on the "UI thread" - Google around for this, it's an
             // important concept in Android.
-            StarterActivity.this.runOnUiThread(new Runnable() {
+            runOnUiThread(new Runnable() {
                 public void run() {
                     // Finally, we've got a new value and we're running on the
                     // UI thread - we set the text of the EngineSpeed view to
                     // the latest value
-                    mEngineSpeedView.setText("Engine speed (RPM): "
-                            + speed.getValue().doubleValue());
-                    enginePos.setProgress(speed.getValue().intValue());
+
                 }
             });
         }
@@ -247,13 +244,12 @@ public class StarterActivity extends BaseActivity {
         @Override
         public void receive(Measurement measurement) {
             final IgnitionStatus ignitionStatus = (IgnitionStatus) measurement;
-            StarterActivity.this.runOnUiThread(new Runnable() {
+            runOnUiThread(new Runnable() {
                 public void run() {
 
-
-                    mIgnitionStatusView.setText("Ignition:"
-                            + ignitionStatus.getValue().toString());
                     IGNITION= (ignitionStatus.getValue().toString());
+                    onIgnitionUpdate();
+
                     Log.d("ıgnition:",IGNITION);
 
                 }
@@ -265,12 +261,10 @@ public class StarterActivity extends BaseActivity {
         @Override
         public void receive(Measurement measurement) {
             final FuelLevel FuelLevelStatus = (FuelLevel) measurement;
-            StarterActivity.this.runOnUiThread(new Runnable() {
+            runOnUiThread(new Runnable() {
                 public void run() {
 
 
-                    mFuelLevelStatusView.setText("Fuel:"
-                            + FuelLevelStatus.getValue().toString());
                     FUEL= (FuelLevelStatus.getValue().toString());
                     Log.d("fuel:",FUEL);
 
@@ -282,6 +276,7 @@ public class StarterActivity extends BaseActivity {
     VehicleSpeed.Listener mVehicleListener = new VehicleSpeed.Listener() {
         @Override
         public void receive(Measurement measurement) {
+            System.out.println(measurement + "weqe");
             // When we receive a new EngineSpeed value from the car, we want to
             // update the UI to display the new value. First we cast the generic
             // Measurement back to the type we know it to be, an EngineSpeed.
@@ -289,14 +284,13 @@ public class StarterActivity extends BaseActivity {
             // In order to modify the UI, we have to make sure the code is
             // running on the "UI thread" - Google around for this, it's an
             // important concept in Android.
-            StarterActivity.this.runOnUiThread(new Runnable() {
+            runOnUiThread(new Runnable() {
                 public void run() {
                     // Finally, we've got a new value and we're running on the
                     // UI thread - we set the text of the EngineSpeed view to
                     // the latest value
                     gForceTracker(speed.getValue().doubleValue(), speed.getBirthtime());
-                    mVehicleSpeedView.setText("Vehicle speed (km/h): "
-                            + speed.getValue().doubleValue());
+
 
                     SPEED= (speed.getValue().toString());
                     Log.d("speed:",SPEED);
@@ -308,6 +302,7 @@ public class StarterActivity extends BaseActivity {
     AcceleratorPedalPosition.Listener mAcceleratorPedalPositionListener = new AcceleratorPedalPosition.Listener() {
         @Override
         public void receive(Measurement measurement) {
+
             // When we receive a new EngineSpeed value from the car, we want to
             // update the UI to display the new value. First we cast the generic
             // Measurement back to the type we know it to be, an EngineSpeed.
@@ -315,18 +310,16 @@ public class StarterActivity extends BaseActivity {
             // In order to modify the UI, we have to make sure the code is
             // running on the "UI thread" - Google around for this, it's an
             // important concept in Android.
-            StarterActivity.this.runOnUiThread(new Runnable() {
+            runOnUiThread(new Runnable() {
                 public void run() {
                     // Finally, we've got a new value and we're running on the
                     // UI thread - we set the text of the EngineSpeed view to
                     // the latest value
                     pedalPos = position.getValue().doubleValue();
-                    mAcceleratorPedalPositionView.setText("AcceleratorPedalPosition value: "
-                            + pedalPos);
-                        ACCELERATORPEDALPOSITION = pedalPos.toString();
+
+                    ACCELERATORPEDALPOSITION = pedalPos.toString();
                     //checkTimeSince(position.getBirthtime(), true);
 
-                    throttlePos.setProgress(pedalPos.intValue());
                     if (gearPosition.equalsIgnoreCase("neutral")) {
                         neutralGasDetected(position.getBirthtime());
                     }
@@ -355,14 +348,13 @@ public class StarterActivity extends BaseActivity {
             // In order to modify the UI, we have to make sure the code is
             // running on the "UI thread" - Google around for this, it's an
             // important concept in Android.
-            StarterActivity.this.runOnUiThread(new Runnable() {
+            runOnUiThread(new Runnable() {
                 public void run() {
                     // Finally, we've got a new value and we're running on the
                     // UI thread - we set the text of the EngineSpeed view to
                     // the latest value
                     Boolean brakePos = position.getValue();
-                    mBrakePedalView.setText("BrakePedalStatus value: "
-                            + brakePos);
+
 
                     BRAKEPEDALPOSITION = brakePos.toString();
 
@@ -386,12 +378,11 @@ public class StarterActivity extends BaseActivity {
             // In order to modify the UI, we have to make sure the code is
             // running on the "UI thread" - Google around for this, it's an
             // important concept in Android.
-            StarterActivity.this.runOnUiThread(new Runnable() {
+            runOnUiThread(new Runnable() {
                 public void run() {
                     // Finally, we've got a new value and we're running on the
                     // UI thread - we set the text of the EngineSpeed view to
                     // the latest value
-                    mOdometerView.setText(distance.getValue().toString());
                     DISTANCE=distance.getValue().toString();
                     Log.d("distance",DISTANCE);
                 }
@@ -409,13 +400,12 @@ public class StarterActivity extends BaseActivity {
             // In order to modify the UI, we have to make sure the code is
             // running on the "UI thread" - Google around for this, it's an
             // important concept in Android.
-            StarterActivity.this.runOnUiThread(new Runnable() {
+           runOnUiThread(new Runnable() {
                 public void run() {
                     // Finally, we've got a new value and we're running on the
                     // UI thread - we set the text of the EngineSpeed view to
                     // the latest value
-                    mGearPositionView.setText("Gear: "
-                            + position.toString());
+
                 }
             });
 
@@ -433,7 +423,7 @@ public class StarterActivity extends BaseActivity {
         // Called when the connection with the VehicleManager service is
         // established, i.e. bound.
         public void onServiceConnected(ComponentName className,
-                IBinder service) {
+                                       IBinder service) {
             Log.i(TAG, "Bound to VehicleManager");
             // When the VehicleManager starts up, we store a reference to it
             // here in "mVehicleManager" so we can call functions on it

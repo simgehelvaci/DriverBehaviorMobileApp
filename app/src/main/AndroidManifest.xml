@@ -7,6 +7,7 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
+
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -17,13 +18,15 @@
         android:allowBackup="true"
         android:icon="@drawable/siyahbeyaz"
         android:label="DRIVE"
-        android:theme="@style/AppTheme">
-        <meta-data android:name="com.google.android.gms.games.APP_ID"
+        android:theme="@style/Theme.AppCompat">
+        <meta-data
+            android:name="com.google.android.gms.games.APP_ID"
             android:value="@string/app_id" />
+
         <activity
             android:name=".StarterActivity"
             android:label="DRIVE"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/Theme.AppCompat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,8 +51,9 @@
         <activity android:name=".BrakePedalPosition" />
         <activity android:name=".Location" />
         <activity android:name=".Settings" />
-        <activity android:name=".AchievementActivity"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+        <activity
+            android:name=".AchievementActivity"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
     </application>
 
 </manifest>

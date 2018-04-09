@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import static com.openxc.openxcstarter.StarterActivity.statusPercentage;
 
-public class Score extends Activity {
+public class Score extends BaseActivity {
 
     private ProgressBar statusBar;
     private TextView statusBarText;
@@ -21,10 +21,17 @@ public class Score extends Activity {
         statusBarText = (TextView) findViewById(R.id.statusBarText);
         statusBar.setMax(statusPercentage);
 
-        setStatus(statusPercentage);
+        setStatus(getStatus());
 
 
     }
+
+    @Override
+    public void onStatusUpdate() {
+        super.onStatusUpdate();
+        setStatus(getStatus());
+    }
+
     public void setStatus(int percentage) {
         if (percentage < 0) { percentage = 0; }
         statusPercentage = percentage;
