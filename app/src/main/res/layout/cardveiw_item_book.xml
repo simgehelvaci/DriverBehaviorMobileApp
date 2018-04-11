@@ -29,7 +29,7 @@
             android:fontFamily="casual"
             android:gravity="center"
             android:text="Book Title"
-            android:textColor="#2d2d2d"
+            android:textColor="@color/white"
             android:textStyle="bold" />
         
     </LinearLayout>

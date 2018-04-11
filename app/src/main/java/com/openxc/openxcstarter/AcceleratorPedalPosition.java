@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class AcceleratorPedalPosition extends Activity {
+public class AcceleratorPedalPosition extends BaseActivity {
 
 
 
@@ -24,6 +24,12 @@ public class AcceleratorPedalPosition extends Activity {
 
 
 
+    }
+
+    @Override
+    public void  onAcceleratorPedalPositionUpdate() {
+        super.onAcceleratorPedalPositionUpdate();
+        View2.setText(BaseActivity.ACCELERATORPEDALPOSITION);
     }
 }
 

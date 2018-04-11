@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-public class Distance extends Activity {
+public class Distance extends BaseActivity {
 
     private TextView DistanceView1;
     private TextView DistanceView2;
@@ -17,7 +17,12 @@ public class Distance extends Activity {
 
         DistanceView1= (TextView) findViewById(R.id.textView1);
         DistanceView2 = (TextView) findViewById(R.id.textView2);
-        DistanceView2.setText(StarterActivity.DISTANCE);
 
+
+    }
+    @Override
+    public void onDistanceUpdate() {
+        super.onDistanceUpdate();
+        DistanceView2.setText(BaseActivity.DISTANCE);
     }
 }

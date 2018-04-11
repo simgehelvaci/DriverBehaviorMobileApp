@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class FuelLevel extends Activity {
+public class FuelLevel extends BaseActivity {
 
 
 
@@ -25,5 +25,10 @@ public class FuelLevel extends Activity {
 
 
 
+    }
+    @Override
+    public void onFuelLevelUpdate() {
+        super.onDistanceUpdate();
+        View2.setText(BaseActivity.FUEL);
     }
 }

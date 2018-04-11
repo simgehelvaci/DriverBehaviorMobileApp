@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-public class BrakePedalPosition extends Activity {
+public class BrakePedalPosition extends BaseActivity {
 
 
 
@@ -25,5 +25,10 @@ public class BrakePedalPosition extends Activity {
 
 
 
+    }
+    @Override
+    public void onBrakePedalPositionUpdate() {
+        super.onBrakePedalPositionUpdate();
+        View2.setText(BaseActivity.BRAKEPEDALPOSITION);
     }
 }

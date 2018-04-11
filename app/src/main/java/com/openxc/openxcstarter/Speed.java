@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-public class Speed extends Activity {
+public class Speed extends BaseActivity {
 
 
     private TextView View1;
@@ -25,5 +25,9 @@ public class Speed extends Activity {
 
 
     }
-
+    @Override
+    public void onSpeedUpdate() {
+        super.onSpeedUpdate();
+        View2.setText(BaseActivity.SPEED);
+    }
 }

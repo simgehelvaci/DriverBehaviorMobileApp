@@ -76,27 +76,6 @@ public class BaseActivity extends AppCompatActivity {
 
 
 
-        // grab a reference to the engine speed text object in the UI, so we can
-        // manipulate its value later from Java code
-//        mFuelLevelStatusView = (TextView) findViewById(R.id.fuel_level);
-//        mEngineSpeedView = (TextView) findViewById(R.id.engine_speed);
-//        mVehicleSpeedView = (TextView) findViewById(R.id.vehicle_speed);
-//        mOdometerView = (TextView) findViewById(R.id.odometer);
-//        mAcceleratorPedalPositionView = (TextView) findViewById(R.id.accelerator_pedal);
-//        mGearPositionView = (TextView) findViewById(R.id.gear_position);
-//        mBrakePedalView = (TextView) findViewById(R.id.brake_pedal_position);
-//        mGForceView= (TextView) findViewById(R.id.g_view);
-//        statusBar = (ProgressBar) findViewById(R.id.statusBar);
-//        statusBarText = (TextView) findViewById(R.id.statusBarText);
-//        warningText = (TextView) findViewById(R.id.warningText);
-//        mIgnitionStatusView = (TextView) findViewById(R.id.ignitionStatus);
-//        throttlePos = (ProgressBar) findViewById(R.id.throttlePos);
-//        enginePos = (ProgressBar) findViewById(R.id.enginePos);
-//
-//
-//        statusBar.setMax(statusPercentage);
-//
-//        setStatus(statusPercentage);
     }
 
 
@@ -110,6 +89,24 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     public void onIgnitionUpdate() {
+
+    }
+    public void onDistanceUpdate() {
+
+    }
+    public void onSpeedUpdate() {
+
+    }
+    public void onGearPositionUpdate() {
+
+    }
+    public void onFuelLevelUpdate() {
+
+    }
+    public void onAcceleratorPedalPositionUpdate() {
+
+    }
+    public void onBrakePedalPositionUpdate() {
 
     }
 
@@ -164,9 +161,10 @@ public class BaseActivity extends AppCompatActivity {
             brakePedalDetectedTimer = time;
         }
         else if (time - brakePedalDetectedTimer > 2500) {
+            Toast.makeText(getApplicationContext(), "Brake Pedal Overused!", Toast.LENGTH_LONG).show();
             status = statusPercentage - 1;
             onStatusUpdate();
-            Toast.makeText(getApplicationContext(), "Brake Pedal Overused!", Toast.LENGTH_LONG).show();
+
             brakePedalDetectedTimer = -1;
         }
     }
@@ -266,6 +264,7 @@ public class BaseActivity extends AppCompatActivity {
 
 
                     FUEL= (FuelLevelStatus.getValue().toString());
+                    onFuelLevelUpdate();
                     Log.d("fuel:",FUEL);
 
                 }
@@ -293,6 +292,7 @@ public class BaseActivity extends AppCompatActivity {
 
 
                     SPEED= (speed.getValue().toString());
+                    onSpeedUpdate();
                     Log.d("speed:",SPEED);
                 }
             });
@@ -318,6 +318,7 @@ public class BaseActivity extends AppCompatActivity {
                     pedalPos = position.getValue().doubleValue();
 
                     ACCELERATORPEDALPOSITION = pedalPos.toString();
+                    onAcceleratorPedalPositionUpdate();
                     //checkTimeSince(position.getBirthtime(), true);
 
                     if (gearPosition.equalsIgnoreCase("neutral")) {
@@ -357,7 +358,7 @@ public class BaseActivity extends AppCompatActivity {
 
 
                     BRAKEPEDALPOSITION = brakePos.toString();
-
+                    onBrakePedalPositionUpdate();
 
                     if (brakePos.booleanValue()) {
                         hardBrakeDetected(position.getBirthtime());
@@ -384,6 +385,9 @@ public class BaseActivity extends AppCompatActivity {
                     // UI thread - we set the text of the EngineSpeed view to
                     // the latest value
                     DISTANCE=distance.getValue().toString();
+                    onDistanceUpdate();
+
+
                     Log.d("distance",DISTANCE);
                 }
             });
@@ -411,6 +415,7 @@ public class BaseActivity extends AppCompatActivity {
 
             gearPosition = position.toString();
             GEAR=position.getValue().toString();
+            onGearPositionUpdate();
             Log.d("Gear",GEAR);
         }
     };
