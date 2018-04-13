@@ -5,6 +5,8 @@ Google Play game services IDs.
 Save this file as res/values/games-ids.xml in your project.
 -->
 <resources>
+    <string name="google_maps_API_key">AIzaSyBoFZOaSagVq4Bwbqhv2ViRfrC1osR6Z4s</string>
+
     <!-- app_id -->
     <string name="app_id" translatable="false">136256785114</string>
     <!-- package_name -->
