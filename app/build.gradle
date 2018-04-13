@@ -23,6 +23,7 @@ dependencies {
     compile 'com.google.firebase:firebase-database:9.8.0'
     compile 'com.google.firebase:firebase-auth:9.8.0'
     compile 'com.google.firebase:firebase-core:9.8.0'
+    //noinspection GradleCompatible
     compile 'com.android.support:appcompat-v7:27.1.0'
     compile 'com.android.support:support-v4:27.1.0'
     compile 'com.openxcplatform:library:6.1.6+'
@@ -33,6 +34,7 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:27.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.airbnb.android:lottie:2.5.0'
+    compile 'com.google.android.gms:play-services:9.8.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
