@@ -76,19 +76,13 @@ public class StarterActivity extends BaseActivity {
         lstBook = new ArrayList<>();
         lstBook.add(new Book("Achievements","Google Play Services","Description",R.drawable.achv));
         lstBook.add(new Book("LeaderBoard","Google Play Services","Description",R.drawable.lb));
-        lstBook.add(new Book("Username","Google Play Services","Description",R.drawable.users));
-        lstBook.add(new Book("Ignition Status","OpenXC Input","Description",R.drawable.sw));
+        lstBook.add(new Book("Location POI","Google Maps","Description",R.drawable.route));
         lstBook.add(new Book("Score","Evaluation","Description",R.drawable.score));
-        lstBook.add(new Book("Distance","OpenXC Input","Description",R.drawable.route));
         lstBook.add(new Book("Fuel Level","OpenXC Input","Description",R.drawable.fuel));
-        lstBook.add(new Book("Nearest Gas Station","Google Maps","Description",R.drawable.gas));
         lstBook.add(new Book("Emergency Button","SMS_Sender","Description",R.drawable.siren));
-        lstBook.add(new Book("Speed","OpenXC Input","Description",R.drawable.speed));
         lstBook.add(new Book("Gear Position","OpenXC Input","Description",R.drawable.gearshift));
         lstBook.add(new Book("Accelerator Pedal Position","OpenXC Input","Description",R.drawable.pedals));
         lstBook.add(new Book("Brake Pedal Position","OpenXC Input","Description",R.drawable.pedal));
-
-        lstBook.add(new Book("Location","Google Maps","Description",R.drawable.location));
         lstBook.add(new Book("Settings","Settings","Description",R.drawable.settings));
 
 

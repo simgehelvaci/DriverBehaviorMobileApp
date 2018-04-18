@@ -18,7 +18,7 @@ import com.google.android.gms.common.GoogleApiAvailability;
 
 public class Location extends AppCompatActivity  {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "StarterActivity";
 
     private static final int ERROR_DIALOG_REQUEST = 9001;
 

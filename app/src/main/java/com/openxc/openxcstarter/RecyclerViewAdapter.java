@@ -68,28 +68,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     // start the activity
                     mContext.startActivity(intent);
                 }
-                else if(mData.get(position).getTitle()=="Username") {
-                    Toast.makeText(getApplicationContext(), "Username", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(mContext, UserName.class);
 
-                    // passing data to the book activity
-                    intent.putExtra("Title", mData.get(position).getTitle());
-                    intent.putExtra("Description", mData.get(position).getDescription());
-                    intent.putExtra("Thumbnail", mData.get(position).getThumbnail());
-                    // start the activity
-                    mContext.startActivity(intent);
-                }
-                else if(mData.get(position).getTitle()=="Ignition Status") {
-                    Toast.makeText(getApplicationContext(), "Ignition Status", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(mContext, IgnitionStatus.class);
 
-                    // passing data to the book activity
-                    intent.putExtra("Title", mData.get(position).getTitle());
-                    intent.putExtra("Description", mData.get(position).getDescription());
-                    intent.putExtra("Thumbnail", mData.get(position).getThumbnail());
-                    // start the activity
-                    mContext.startActivity(intent);
-                }
                 else if(mData.get(position).getTitle()=="Score") {
                     Toast.makeText(getApplicationContext(), "Score", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(mContext, Score.class);
@@ -101,17 +81,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     // start the activity
                     mContext.startActivity(intent);
                 }
-                else if(mData.get(position).getTitle()=="Distance") {
-                    Toast.makeText(getApplicationContext(), "Distance", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(mContext, Distance.class);
 
-                    // passing data to the book activity
-                    intent.putExtra("Title", mData.get(position).getTitle());
-                    intent.putExtra("Description", mData.get(position).getDescription());
-                    intent.putExtra("Thumbnail", mData.get(position).getThumbnail());
-                    // start the activity
-                    mContext.startActivity(intent);
-                }
                 else if(mData.get(position).getTitle()=="Fuel Level") {
                     Toast.makeText(getApplicationContext(), "Fuel Level", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(mContext, FuelLevel.class);
@@ -123,17 +93,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     // start the activity
                     mContext.startActivity(intent);
                 }
-                else if(mData.get(position).getTitle()=="Nearest Gas Station") {
-                    Toast.makeText(getApplicationContext(), "Nearest Gas Station", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(mContext, NearestGasStation.class);
 
-                    // passing data to the book activity
-                    intent.putExtra("Title", mData.get(position).getTitle());
-                    intent.putExtra("Description", mData.get(position).getDescription());
-                    intent.putExtra("Thumbnail", mData.get(position).getThumbnail());
-                    // start the activity
-                    mContext.startActivity(intent);
-                }
                 else if(mData.get(position).getTitle()=="Emergency Button") {
                     Toast.makeText(getApplicationContext(), "Emergency Button", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(mContext, EmergencyButton.class);
@@ -145,17 +105,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     // start the activity
                     mContext.startActivity(intent);
                 }
-                else if(mData.get(position).getTitle()=="Speed") {
-                    Toast.makeText(getApplicationContext(), "Speed", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(mContext, Speed.class);
 
-                    // passing data to the book activity
-                    intent.putExtra("Title", mData.get(position).getTitle());
-                    intent.putExtra("Description", mData.get(position).getDescription());
-                    intent.putExtra("Thumbnail", mData.get(position).getThumbnail());
-                    // start the activity
-                    mContext.startActivity(intent);
-                }
                 else if(mData.get(position).getTitle()=="Gear Position") {
                     Toast.makeText(getApplicationContext(), "Gear Position", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(mContext, GearPosition.class);
@@ -190,9 +140,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     mContext.startActivity(intent);
                 }
 
-                else if(mData.get(position).getTitle()=="Location") {
+                else if(mData.get(position).getTitle()=="Location POI") {
                     Toast.makeText(getApplicationContext(), "Location", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(mContext, Location.class);
+                    Intent intent = new Intent(mContext, MapsActivity.class);
 
                     // passing data to the book activity
                     intent.putExtra("Title", mData.get(position).getTitle());

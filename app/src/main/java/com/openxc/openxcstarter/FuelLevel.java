@@ -8,19 +8,31 @@ public class FuelLevel extends BaseActivity {
 
 
 
-    private TextView View1;
-    private TextView View2;
+    private TextView FuelLevelTxt;
+    private TextView SpeedTxt;
+    private TextView IgnitionTxt;
+    private TextView DistanceTxt;
+    private TextView FuelLevelTxt2;
+    private TextView SpeedTxt2;
+    private TextView IgnitionTxt2;
+    private TextView DistanceTxt2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fuel_layout);
 
+        FuelLevelTxt2= (TextView) findViewById(R.id.fuel_levelTxt);
+        SpeedTxt2 = (TextView) findViewById(R.id.speedTxt);
+        IgnitionTxt2= (TextView) findViewById(R.id.ignitionStatusTxt);
+        DistanceTxt2 = (TextView) findViewById(R.id.odometerTxt);
+
+        FuelLevelTxt= (TextView) findViewById(R.id.fuel_levelTxt2);
+        SpeedTxt = (TextView) findViewById(R.id.speedTxt2);
+        IgnitionTxt= (TextView) findViewById(R.id.ignitionStatusTxt2);
+        DistanceTxt = (TextView) findViewById(R.id.odometerTxt2);
 
 
-        View1= (TextView) findViewById(R.id.textView1);
-        View2 = (TextView) findViewById(R.id.textView2);
-        View2.setText(StarterActivity.FUEL);
 
 
 
@@ -29,6 +41,21 @@ public class FuelLevel extends BaseActivity {
     @Override
     public void onFuelLevelUpdate() {
         super.onDistanceUpdate();
-        View2.setText(BaseActivity.FUEL);
+        FuelLevelTxt.setText(BaseActivity.FUEL);
+    }
+    @Override
+    public void onSpeedUpdate() {
+        super.onSpeedUpdate();
+        SpeedTxt.setText(BaseActivity.SPEED);
+    }
+    @Override
+    public void onIgnitionUpdate() {
+        super.onIgnitionUpdate();
+        IgnitionTxt.setText(BaseActivity.IGNITION);
+    }
+    @Override
+    public void onDistanceUpdate() {
+        super.onDistanceUpdate();
+        DistanceTxt.setText(BaseActivity.DISTANCE);
     }
 }
