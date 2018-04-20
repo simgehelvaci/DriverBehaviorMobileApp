@@ -19,7 +19,7 @@ public class Score extends BaseActivity {
         setContentView(R.layout.score_layout);
         statusBar = (ProgressBar) findViewById(R.id.statusBar);
         statusBarText = (TextView) findViewById(R.id.statusBarText);
-        statusBar.setMax(statusPercentage);
+       // statusBar.setMax(statusPercentage);
 
         setStatus(getStatus());
 

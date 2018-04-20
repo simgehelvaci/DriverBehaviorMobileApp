@@ -78,11 +78,9 @@ public class StarterActivity extends BaseActivity {
         lstBook.add(new Book("LeaderBoard","Google Play Services","Description",R.drawable.lb));
         lstBook.add(new Book("Location POI","Google Maps","Description",R.drawable.route));
         lstBook.add(new Book("Score","Evaluation","Description",R.drawable.score));
-        lstBook.add(new Book("Fuel Level","OpenXC Input","Description",R.drawable.fuel));
+        lstBook.add(new Book("Fuel Info","OpenXC Input","Description",R.drawable.fuel));
         lstBook.add(new Book("Emergency Button","SMS_Sender","Description",R.drawable.siren));
-        lstBook.add(new Book("Gear Position","OpenXC Input","Description",R.drawable.gearshift));
-        lstBook.add(new Book("Accelerator Pedal Position","OpenXC Input","Description",R.drawable.pedals));
-        lstBook.add(new Book("Brake Pedal Position","OpenXC Input","Description",R.drawable.pedal));
+        lstBook.add(new Book("Pedal Position","OpenXC Input","Description",R.drawable.pedal));
         lstBook.add(new Book("Settings","Settings","Description",R.drawable.settings));
 
 

@@ -9,9 +9,16 @@ public class BrakePedalPosition extends BaseActivity {
 
 
 
-    private TextView View1;
-    private TextView View2;
-
+    private TextView gearTxt;
+    private TextView gearTxt2;
+    private TextView acceleratorTxt;
+    private TextView acceleratorTxt2;
+    private TextView brakePedTxt;
+    private TextView brakePedTxt2;
+    private TextView steeringWheelAngleTxt;
+    private TextView steeringWheelAngleTxt2;
+    private TextView engineSpeedTxt;
+    private TextView engineSpeedTxt2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,9 +26,16 @@ public class BrakePedalPosition extends BaseActivity {
 
 
 
-        View1= (TextView) findViewById(R.id.textView1);
-        View2 = (TextView) findViewById(R.id.textView2);
-        View2.setText(StarterActivity.BRAKEPEDALPOSITION);
+        gearTxt= (TextView) findViewById(R.id.gear_positionTxt);
+        acceleratorTxt = (TextView) findViewById(R.id.gear_positionTxt2);
+        brakePedTxt = (TextView) findViewById(R.id.brake_pedal_positionTxt);
+        gearTxt2= (TextView) findViewById(R.id.gear_positionTxt2);
+        acceleratorTxt2 = (TextView) findViewById(R.id.accelerator_pedalTxt2);
+        brakePedTxt2 = (TextView) findViewById(R.id.brake_pedal_positionTxt2);
+        engineSpeedTxt = (TextView) findViewById(R.id.engine_speedTxt);
+        engineSpeedTxt2 = (TextView) findViewById(R.id.engine_speedTxt2);
+        steeringWheelAngleTxt = (TextView) findViewById(R.id.steering_wheel_angleTxt);
+        steeringWheelAngleTxt2 = (TextView) findViewById(R.id.steering_wheel_angleTxt2);
 
 
 
@@ -29,6 +43,26 @@ public class BrakePedalPosition extends BaseActivity {
     @Override
     public void onBrakePedalPositionUpdate() {
         super.onBrakePedalPositionUpdate();
-        View2.setText(BaseActivity.BRAKEPEDALPOSITION);
+        brakePedTxt2.setText(BaseActivity.BRAKEPEDALPOSITION);
+    }
+    @Override
+    public void onGearPositionUpdate() {
+        super.onGearPositionUpdate();
+         gearTxt2.setText(BaseActivity.GEAR);
+    }
+    @Override
+    public void  onAcceleratorPedalPositionUpdate() {
+        super.onAcceleratorPedalPositionUpdate();
+        acceleratorTxt2.setText(BaseActivity.ACCELERATORPEDALPOSITION);
+    }
+    @Override
+    public void  onEngineSpeedUpdate() {
+        super.onAcceleratorPedalPositionUpdate();
+        engineSpeedTxt2.setText(BaseActivity.ENGINESPEED);
+    }
+    @Override
+    public void  onSteeringWheelAngleUpdate() {
+        super.onAcceleratorPedalPositionUpdate();
+        steeringWheelAngleTxt2.setText(BaseActivity.STEERINGWHEELANGLE);
     }
 }

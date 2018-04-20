@@ -27,6 +27,7 @@ import com.openxc.measurements.Odometer;
 import com.openxc.measurements.TransmissionGearPosition;
 import com.openxc.measurements.VehicleSpeed;
 import com.openxc.measurements.IgnitionStatus;
+import com.openxc.measurements.SteeringWheelAngle;
 import com.openxc.units.Boolean;
 
 import java.util.ArrayList;
@@ -61,10 +62,12 @@ public class BaseActivity extends AppCompatActivity {
     public static String FUEL;
     public static String GEAR;
     public static String SPEED;
+    public static String ENGINESPEED;
     public static String ACCELERATORPEDALPOSITION;
     public static String BRAKEPEDALPOSITION;
+    public static String STEERINGWHEELANGLE;
 
-    int status = 100;
+    public static int status = 100;
 
 
     private double gForce = -1;
@@ -87,7 +90,9 @@ public class BaseActivity extends AppCompatActivity {
     public void onStatusUpdate() {
 
     }
+    public void onSteeringWheelAngleUpdate() {
 
+    }
     public void onIgnitionUpdate() {
 
     }
@@ -95,6 +100,9 @@ public class BaseActivity extends AppCompatActivity {
 
     }
     public void onSpeedUpdate() {
+
+    }
+    public void onEngineSpeedUpdate() {
 
     }
     public void onGearPositionUpdate() {
@@ -217,13 +225,14 @@ public class BaseActivity extends AppCompatActivity {
      * Later in the file, we'll ask the VehicleManager to call the receive()
      * function here whenever a new EngineSpeed value arrives.
      */
-    EngineSpeed.Listener mSpeedListener = new EngineSpeed.Listener() {
+
+    SteeringWheelAngle.Listener mSteeringWheelAngleListener = new EngineSpeed.Listener() {
         @Override
         public void receive(Measurement measurement) {
             // When we receive a new EngineSpeed value from the car, we want to
             // update the UI to display the new value. First we cast the generic
             // Measurement back to the type we know it to be, an EngineSpeed.
-            final EngineSpeed speed = (EngineSpeed) measurement;
+            final SteeringWheelAngle steeringWheelAngle = (SteeringWheelAngle) measurement;
             // In order to modify the UI, we have to make sure the code is
             // running on the "UI thread" - Google around for this, it's an
             // important concept in Android.
@@ -232,6 +241,36 @@ public class BaseActivity extends AppCompatActivity {
                     // Finally, we've got a new value and we're running on the
                     // UI thread - we set the text of the EngineSpeed view to
                     // the latest value
+                    STEERINGWHEELANGLE= (steeringWheelAngle.getValue().toString());
+                    onSteeringWheelAngleUpdate();
+                    Log.d("angle:",STEERINGWHEELANGLE);
+
+                }
+            });
+        }
+    };
+
+
+
+
+
+    EngineSpeed.Listener mSpeedListener = new EngineSpeed.Listener() {
+        @Override
+        public void receive(Measurement measurement) {
+            // When we receive a new EngineSpeed value from the car, we want to
+            // update the UI to display the new value. First we cast the generic
+            // Measurement back to the type we know it to be, an EngineSpeed.
+            final EngineSpeed engineSpeed = (EngineSpeed) measurement;
+            // In order to modify the UI, we have to make sure the code is
+            // running on the "UI thread" - Google around for this, it's an
+            // important concept in Android.
+            runOnUiThread(new Runnable() {
+                public void run() {
+                    // Finally, we've got a new value and we're running on the
+                    // UI thread - we set the text of the EngineSpeed view to
+                    // the latest value
+                    ENGINESPEED= (engineSpeed.getValue().toString());
+                    onEngineSpeedUpdate();
 
                 }
             });
@@ -248,7 +287,7 @@ public class BaseActivity extends AppCompatActivity {
                     IGNITION= (ignitionStatus.getValue().toString());
                     onIgnitionUpdate();
 
-                    Log.d("ıgnition:",IGNITION);
+
 
                 }
             });
@@ -265,7 +304,7 @@ public class BaseActivity extends AppCompatActivity {
 
                     FUEL= (FuelLevelStatus.getValue().toString());
                     onFuelLevelUpdate();
-                    Log.d("fuel:",FUEL);
+
 
                 }
             });
@@ -275,7 +314,7 @@ public class BaseActivity extends AppCompatActivity {
     VehicleSpeed.Listener mVehicleListener = new VehicleSpeed.Listener() {
         @Override
         public void receive(Measurement measurement) {
-            System.out.println(measurement + "weqe");
+
             // When we receive a new EngineSpeed value from the car, we want to
             // update the UI to display the new value. First we cast the generic
             // Measurement back to the type we know it to be, an EngineSpeed.
@@ -293,7 +332,7 @@ public class BaseActivity extends AppCompatActivity {
 
                     SPEED= (speed.getValue().toString());
                     onSpeedUpdate();
-                    Log.d("speed:",SPEED);
+
                 }
             });
         }
@@ -388,7 +427,7 @@ public class BaseActivity extends AppCompatActivity {
                     onDistanceUpdate();
 
 
-                    Log.d("distance",DISTANCE);
+
                 }
             });
         }
@@ -409,14 +448,15 @@ public class BaseActivity extends AppCompatActivity {
                     // Finally, we've got a new value and we're running on the
                     // UI thread - we set the text of the EngineSpeed view to
                     // the latest value
+                    gearPosition = position.toString();
+                    GEAR=position.toString();
+                    onGearPositionUpdate();
+
 
                 }
             });
 
-            gearPosition = position.toString();
-            GEAR=position.getValue().toString();
-            onGearPositionUpdate();
-            Log.d("Gear",GEAR);
+
         }
     };
 
@@ -441,6 +481,7 @@ public class BaseActivity extends AppCompatActivity {
             // we request that the VehicleManager call its receive() method
             // whenever the EngineSpeed changes
 
+            mVehicleManager.addListener(SteeringWheelAngle.class,mSteeringWheelAngleListener);
             mVehicleManager.addListener(FuelLevel.class,  mFuelLevelListener);
             mVehicleManager.addListener(EngineSpeed.class, mSpeedListener);
             mVehicleManager.addListener(VehicleSpeed.class, mVehicleListener);

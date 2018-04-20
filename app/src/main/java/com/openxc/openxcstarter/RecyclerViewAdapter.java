@@ -82,8 +82,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     mContext.startActivity(intent);
                 }
 
-                else if(mData.get(position).getTitle()=="Fuel Level") {
-                    Toast.makeText(getApplicationContext(), "Fuel Level", Toast.LENGTH_LONG).show();
+                else if(mData.get(position).getTitle()=="Fuel Info") {
+                    Toast.makeText(getApplicationContext(), "Fuel Info", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(mContext, FuelLevel.class);
 
                     // passing data to the book activity
@@ -106,30 +106,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     mContext.startActivity(intent);
                 }
 
-                else if(mData.get(position).getTitle()=="Gear Position") {
-                    Toast.makeText(getApplicationContext(), "Gear Position", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(mContext, GearPosition.class);
 
-                    // passing data to the book activity
-                    intent.putExtra("Title", mData.get(position).getTitle());
-                    intent.putExtra("Description", mData.get(position).getDescription());
-                    intent.putExtra("Thumbnail", mData.get(position).getThumbnail());
-                    // start the activity
-                    mContext.startActivity(intent);
-                }
-                else if(mData.get(position).getTitle()=="Accelerator Pedal Position") {
-                    Toast.makeText(getApplicationContext(), "Accelerator Pedal Position", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(mContext, AcceleratorPedalPosition.class);
-
-                    // passing data to the book activity
-                    intent.putExtra("Title", mData.get(position).getTitle());
-                    intent.putExtra("Description", mData.get(position).getDescription());
-                    intent.putExtra("Thumbnail", mData.get(position).getThumbnail());
-                    // start the activity
-                    mContext.startActivity(intent);
-                }
-                else if(mData.get(position).getTitle()=="Brake Pedal Position") {
-                    Toast.makeText(getApplicationContext(), "Brake Pedal Position", Toast.LENGTH_LONG).show();
+                else if(mData.get(position).getTitle()=="Pedal Position") {
+                    Toast.makeText(getApplicationContext(), "Pedal Position", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(mContext, BrakePedalPosition.class);
 
                     // passing data to the book activity
