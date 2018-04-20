@@ -2,6 +2,7 @@ package com.openxc.openxcstarter;
 
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -28,24 +29,22 @@ import com.google.firebase.database.FirebaseDatabase;
 import static com.openxc.openxcstarter.StarterActivity.*;
 import static com.openxc.openxcstarter.StarterActivity.statusPercentage;
 
-public class AchievementActivity extends BaseActivity {
+public class AchievementActivity extends FragmentActivity {
 
-    private Button mainButton;
-    private TextView scoreView;
-    private TextView timeView;
-    private Button leaderboardButton;
-    private Button showAchievementsButton;
-    private int score = 0;
-    private boolean playing = false;
-    GoogleApiClient apiClient;
-    String TAG = "Blabla";
-    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.achievements_layout);
-
+        startActivityForResult(
+                Games.Achievements
+                        .getAchievementsIntent(apiClient),
+                1
+        );
+        startActivityForResult(
+                Games.Achievements
+                        .getAchievementsIntent(apiClient),
+                2
+        );
 
     }
 

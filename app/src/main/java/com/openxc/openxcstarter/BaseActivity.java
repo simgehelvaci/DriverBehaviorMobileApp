@@ -5,17 +5,28 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.IBinder;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.games.Games;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.openxc.VehicleManager;
 import com.openxc.measurements.FuelLevel;
 import com.openxc.measurements.AcceleratorPedalPosition;
@@ -31,6 +42,8 @@ import com.openxc.units.Boolean;
 
 import java.util.List;
 import java.util.Locale;
+
+import static com.google.android.gms.analytics.internal.zzy.ex;
 
 public class BaseActivity extends AppCompatActivity {
     private static final String TAG = "StarterActivity";
@@ -71,25 +84,93 @@ public class BaseActivity extends AppCompatActivity {
     private double gForce = -1;
     private double weight = 0.5;
 
-    private Button mainButton;
-    private TextView scoreView;
-    private TextView timeView;
-    private Button leaderboardButton;
-    private Button showAchievementsButton;
-    private int score = 0;
-    private boolean playing = false;
-    GoogleApiClient apiClient;
 
-    private FirebaseAuth mAuth;
+    private boolean playing = false;
+    public static GoogleApiClient apiClient;
+
+    public static FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-      
+
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        apiClient = new GoogleApiClient.Builder(this)
+                .addApi(Games.API)
+                .addScope(Games.SCOPE_GAMES)
+                .enableAutoManage(this, new GoogleApiClient.OnConnectionFailedListener() {
+                    @Override
+                    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+                        Log.e(TAG, "Could not connect to Play games services");
+                        finish();
+                    }
+
+                }).build();
+
+        mAuth.signInAnonymously()
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInAnonymously:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            //updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInAnonymously:failure", task.getException());
+                            Toast.makeText(BaseActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            //updateUI(null);
+                        }
+
+                        // ...
+                    }
+                });
+
+
+
+
+
+
+
+
+                }
+
+
+    public void getAchivements(GoogleApiClient apiClient) {
+
+
+        if (apiClient != null && apiClient.isConnected()) {
+            try {
+                startActivityForResult(
+                        Games.Achievements
+                                .getAchievementsIntent(apiClient),
+                        1
+                );
+                startActivityForResult(
+                        Games.Achievements
+                                .getAchievementsIntent(apiClient),
+                        2
+                );
+
+
+            } catch (Exception ex) {
+                // This will catch the exception, handle as needed
+
+            }
+        }
+    }
+
+    public void getLeaderboard(GoogleApiClient apiClient) {
+        startActivityForResult(
+                Games.Leaderboards.getLeaderboardIntent(apiClient,
+                        getString(R.string.leaderboard_my_little_leaderboard)), 0);
 
 
     }
-
 
 
     public int getStatus() {
@@ -197,9 +278,29 @@ public class BaseActivity extends AppCompatActivity {
         }
         else if (time - ignitionOffDetectedTimer > 2000) {
 
-            Toast.makeText(getApplicationContext(), "Ignition Off!", Toast.LENGTH_LONG).show();
+           // Toast.makeText(getApplicationContext(), "Ignition Off!", Toast.LENGTH_LONG).show();
 
             ignitionOffDetectedTimer = -1;
+            playing = false;
+
+            Toast.makeText(getApplicationContext(), "Game over", Toast.LENGTH_LONG).show();
+
+            Games.Leaderboards.submitScore(apiClient,
+                    getString(R.string.leaderboard_my_little_leaderboard),
+                    statusPercentage);
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference myRef = database.getReference();
+
+
+            myRef.child("Drivers").child("Driver_id").setValue("55");
+            String playerName = Games.Players.getCurrentPlayer(apiClient).getName();
+            myRef.child("Drivers").child("Driver_name").setValue(playerName);
+            myRef.child("Drivers").child("Driver_score").setValue(statusPercentage);
+            if(statusPercentage>90) {
+                Games.Achievements
+                        .unlock(apiClient,
+                                getString(R.string.achievement_lightning_fast));
+            }
 
         }
 
@@ -214,9 +315,13 @@ public class BaseActivity extends AppCompatActivity {
         }
         else if (time - ignitionOnDetectedTimer > 2000) {
 
-            Toast.makeText(getApplicationContext(), "Ignition Start!", Toast.LENGTH_LONG).show();
+           // Toast.makeText(getApplicationContext(), "Ignition Start!", Toast.LENGTH_LONG).show();
 
             ignitionOnDetectedTimer = -1;
+            if(!playing){
+                playing = true;
+                Toast.makeText(getApplicationContext(), "Play Start!", Toast.LENGTH_LONG).show();
+            }
 
         }
 
