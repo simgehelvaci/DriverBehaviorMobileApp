@@ -1,6 +1,5 @@
 package com.openxc.openxcstarter;
 
-import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -8,16 +7,16 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.firebase.auth.FirebaseAuth;
 import com.openxc.VehicleManager;
-import com.openxc.measurements.FuelConsumed;
 import com.openxc.measurements.FuelLevel;
 import com.openxc.measurements.AcceleratorPedalPosition;
 import com.openxc.measurements.BrakePedalStatus;
@@ -30,7 +29,6 @@ import com.openxc.measurements.IgnitionStatus;
 import com.openxc.measurements.SteeringWheelAngle;
 import com.openxc.units.Boolean;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -73,10 +71,21 @@ public class BaseActivity extends AppCompatActivity {
     private double gForce = -1;
     private double weight = 0.5;
 
+    private Button mainButton;
+    private TextView scoreView;
+    private TextView timeView;
+    private Button leaderboardButton;
+    private Button showAchievementsButton;
+    private int score = 0;
+    private boolean playing = false;
+    GoogleApiClient apiClient;
+
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+      
 
 
     }
@@ -96,6 +105,7 @@ public class BaseActivity extends AppCompatActivity {
     public void onIgnitionUpdate() {
 
     }
+
     public void onDistanceUpdate() {
 
     }
@@ -151,6 +161,8 @@ public class BaseActivity extends AppCompatActivity {
     long pedalOver70Timer = 0;
     long neutralGasDetectedTimer = -1;
     long brakePedalDetectedTimer = -1;
+    long ignitionOffDetectedTimer = -1;
+    long ignitionOnDetectedTimer = -1;
 
     private void neutralGasDetected(long time) {
         if (neutralGasDetectedTimer == -1) {
@@ -176,6 +188,43 @@ public class BaseActivity extends AppCompatActivity {
             brakePedalDetectedTimer = -1;
         }
     }
+
+
+        public boolean ignitionOffDetected(long time) {
+        if (ignitionOffDetectedTimer == -1) {
+            ignitionOffDetectedTimer = time;
+
+        }
+        else if (time - ignitionOffDetectedTimer > 2000) {
+
+            Toast.makeText(getApplicationContext(), "Ignition Off!", Toast.LENGTH_LONG).show();
+
+            ignitionOffDetectedTimer = -1;
+
+        }
+
+        return true;
+    }
+
+
+    public boolean ignitionOnDetected(long time) {
+        if (ignitionOnDetectedTimer == -1) {
+            ignitionOnDetectedTimer = time;
+
+        }
+        else if (time - ignitionOnDetectedTimer > 2000) {
+
+            Toast.makeText(getApplicationContext(), "Ignition Start!", Toast.LENGTH_LONG).show();
+
+            ignitionOnDetectedTimer = -1;
+
+        }
+
+        return true;
+    }
+
+
+
     private void gForceTracker(double velocity, long birthtime) {
         //gForce = ((velocity) - gForceVelocity) * (1000/(60 * 60)) / (1000 / ((birthtime) - gForceTimer));
         gForce = gForce * 1/gConstant * (1 - weight) + weight * ((velocity) - gForceVelocity) / 3.6 * (1000 / Double.valueOf(birthtime - gForceTimer));
@@ -286,6 +335,12 @@ public class BaseActivity extends AppCompatActivity {
 
                     IGNITION= (ignitionStatus.getValue().toString());
                     onIgnitionUpdate();
+                    if (IGNITION.equalsIgnoreCase("off")) {
+                        ignitionOffDetected(ignitionStatus.getBirthtime());
+                    }
+                    else if (IGNITION.equalsIgnoreCase("start")) {
+                        ignitionOnDetected(ignitionStatus.getBirthtime());
+                    }
 
 
 
