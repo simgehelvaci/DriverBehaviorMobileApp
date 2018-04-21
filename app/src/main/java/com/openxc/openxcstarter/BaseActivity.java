@@ -47,21 +47,9 @@ import static com.google.android.gms.analytics.internal.zzy.ex;
 
 public class BaseActivity extends AppCompatActivity {
     private static final String TAG = "StarterActivity";
-    List<Book> lstBook ;
-    private TextView mIgnitionStatusView;
-    private TextView mFuelLevelStatusView;
+
     private VehicleManager mVehicleManager;
-    private TextView mEngineSpeedView;
-    private TextView mVehicleSpeedView;
-    private TextView mOdometerView;
-    private TextView mAcceleratorPedalPositionView;
-    private TextView mGearPositionView;
-    private TextView mGForceView;
-    private TextView mBrakePedalView;
-    private ProgressBar statusBar, throttlePos, enginePos;
-    private TextView statusBarText;
-    private TextView warningText;
-    //    private TextView gR, gN, g1, g2, g3, g4, g5, g6;
+
     private long gForceTimer = -1;
     private double gForceVelocity = -1;
     private final double gConstant = 9.80665;
@@ -140,37 +128,7 @@ public class BaseActivity extends AppCompatActivity {
                 }
 
 
-    public void getAchivements(GoogleApiClient apiClient) {
 
-
-        if (apiClient != null && apiClient.isConnected()) {
-            try {
-                startActivityForResult(
-                        Games.Achievements
-                                .getAchievementsIntent(apiClient),
-                        1
-                );
-                startActivityForResult(
-                        Games.Achievements
-                                .getAchievementsIntent(apiClient),
-                        2
-                );
-
-
-            } catch (Exception ex) {
-                // This will catch the exception, handle as needed
-
-            }
-        }
-    }
-
-    public void getLeaderboard(GoogleApiClient apiClient) {
-        startActivityForResult(
-                Games.Leaderboards.getLeaderboardIntent(apiClient,
-                        getString(R.string.leaderboard_my_little_leaderboard)), 0);
-
-
-    }
 
 
     public int getStatus() {

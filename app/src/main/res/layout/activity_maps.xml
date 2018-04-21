@@ -36,10 +36,10 @@
             />
 
         <Button
-            android:id="@+id/btnSchool"
+            android:id="@+id/btnRepear"
             android:layout_width="63dp"
             android:layout_height="58dp"
-            android:background="@drawable/school"
+            android:background="@drawable/repear"
             android:paddingBottom="10dp"
              />
 
@@ -48,6 +48,13 @@
             android:layout_width="63dp"
             android:layout_height="55dp"
             android:background="@drawable/gas_station"
+            android:paddingBottom="10dp" />
+
+        <Button
+            android:id="@+id/btnPharmacy"
+            android:layout_width="63dp"
+            android:layout_height="55dp"
+            android:background="@drawable/pharmacy"
             android:paddingBottom="10dp" />
 
     </LinearLayout>

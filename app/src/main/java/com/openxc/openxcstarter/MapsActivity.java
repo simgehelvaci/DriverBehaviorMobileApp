@@ -148,9 +148,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
-        Button btnSchool = (Button) findViewById(R.id.btnSchool);
-        btnSchool.setOnClickListener(new View.OnClickListener() {
-            String School = "school";
+        Button btnRepair = (Button) findViewById(R.id.btnRepear);
+        btnRepair.setOnClickListener(new View.OnClickListener() {
+            String Repair = "car_repair";
             @Override
             public void onClick(View v) {
                 Log.d("onClick", "Button is Clicked");
@@ -158,14 +158,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 if (mCurrLocationMarker != null) {
                     mCurrLocationMarker.remove();
                 }
-                String url = getUrl(latitude, longitude, School);
+                String url = getUrl(latitude, longitude, Repair);
                 Object[] DataTransfer = new Object[2];
                 DataTransfer[0] = mMap;
                 DataTransfer[1] = url;
                 Log.d("onClick", url);
                 GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
                 getNearbyPlacesData.execute(DataTransfer);
-                Toast.makeText(MapsActivity.this,"Nearby Schools", Toast.LENGTH_LONG).show();
+                Toast.makeText(MapsActivity.this,"Nearby Car Repair", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -188,6 +188,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
                 getNearbyPlacesData.execute(DataTransfer);
                 Toast.makeText(MapsActivity.this,"Nearby Gas Stations", Toast.LENGTH_LONG).show();
+            }
+        });
+        Button btnPharmacy = (Button) findViewById(R.id.btnPharmacy);
+        btnPharmacy.setOnClickListener(new View.OnClickListener() {
+            String pharmacy = "pharmacy";
+            @Override
+            public void onClick(View v) {
+                Log.d("onClick", "Button is Clicked");
+                mMap.clear();
+                if (mCurrLocationMarker != null) {
+                    mCurrLocationMarker.remove();
+                }
+                String url = getUrl(latitude, longitude, pharmacy);
+                Object[] DataTransfer = new Object[2];
+                DataTransfer[0] = mMap;
+                DataTransfer[1] = url;
+                Log.d("onClick", url);
+                GetNearbyPlacesData getNearbyPlacesData = new GetNearbyPlacesData();
+                getNearbyPlacesData.execute(DataTransfer);
+                Toast.makeText(MapsActivity.this,"Nearby Pharmacy", Toast.LENGTH_LONG).show();
             }
         });
     }
