@@ -18,7 +18,7 @@ public class LeaderBoard extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // setContentView(R.layout.activity_book_);
+        setContentView(R.layout.leaderboard_layout);
 
         startActivityForResult(
                 Games.Leaderboards.getLeaderboardIntent(apiClient,
