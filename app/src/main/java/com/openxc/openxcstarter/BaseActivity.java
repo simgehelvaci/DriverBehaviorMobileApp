@@ -65,6 +65,7 @@ public class BaseActivity extends AppCompatActivity {
     public static String ACCELERATORPEDALPOSITION;
     public static String BRAKEPEDALPOSITION;
     public static String STEERINGWHEELANGLE;
+    private int SPEEDLIMIT=70;
 
     public static int status = 100;
 
@@ -482,7 +483,7 @@ public class BaseActivity extends AppCompatActivity {
                         neutralGasDetected(position.getBirthtime());
                     }
 
-                    if (pedalPos > 70) {
+                    if (pedalPos > SPEEDLIMIT) {
                         checkTimeSince(position.getBirthtime(), true);
                     }
                     else {
