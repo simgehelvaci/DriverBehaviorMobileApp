@@ -24,6 +24,10 @@ public class EmergencyButton extends Activity {
     Button buttonSend;
     EditText textPhoneNo;
     EditText textSMS;
+    public static String username="Simge Helvacı";
+    public static String telephone1="+905536331118";
+    public static String telephone2="+905536331118";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +47,17 @@ public class EmergencyButton extends Activity {
 
         }
 
+        String lat = String.valueOf(GetNearbyPlacesData.LAT);
+        String lng = String.valueOf(GetNearbyPlacesData.LNG);
+        String place = "https://maps.google.com/?q="+lat+","+lng;
 
                 try {
                     SmsManager smsManager = SmsManager.getDefault();
-                    smsManager.sendTextMessage("+905536331118", null, "\"Accident Occured Here: https://www.google.com.tr/maps/@40.9755881,29.2338394,16.65z?hl=tr!\"", null, null);
-                    Toast.makeText(getApplicationContext(), "SMS Sent!",
+                    smsManager.sendTextMessage(telephone1, null, "Emergency call from "+username +" "+"at location: "+place, null, null);
+                    smsManager.sendTextMessage(telephone2, null, "Emergency call from "+username +" "+"at location: "+place, null, null);
+                    Toast.makeText(getApplicationContext(), "SMS Sent!  "+place,
                             Toast.LENGTH_LONG).show();
+
                 } catch (Exception e) {
                     Toast.makeText(getApplicationContext(),
                             "SMS faild, please try again later!",

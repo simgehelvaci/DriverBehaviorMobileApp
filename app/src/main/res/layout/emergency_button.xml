@@ -12,8 +12,18 @@
         android:id="@+id/textViewPhoneNo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Emergency Button Clicked "
+        android:text="Emergency Call Occured Here! "
+
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="marker.json"
+        app:lottie_loop="true" />
 
 
 

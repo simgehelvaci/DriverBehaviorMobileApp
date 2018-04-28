@@ -8,20 +8,22 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.openxc.measurements.Latitude;
 
 import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.List;
 
-/**
- * Created by navneet on 23/7/16.
- */
 public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
 
     String googlePlacesData;
     GoogleMap mMap;
     String url;
+    public static double LAT=40.973453;
+    public static double LNG=29.152629;
+
+
 
     @Override
     protected String doInBackground(Object... params) {
@@ -55,6 +57,8 @@ public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
             HashMap<String, String> googlePlace = nearbyPlacesList.get(i);
             double lat = Double.parseDouble(googlePlace.get("lat"));
             double lng = Double.parseDouble(googlePlace.get("lng"));
+            LAT = lat;
+            LNG = lng;
             String placeName = googlePlace.get("place_name");
             String vicinity = googlePlace.get("vicinity");
             LatLng latLng = new LatLng(lat, lng);

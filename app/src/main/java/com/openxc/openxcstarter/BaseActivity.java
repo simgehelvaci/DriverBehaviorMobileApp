@@ -39,6 +39,9 @@ import com.openxc.measurements.VehicleSpeed;
 import com.openxc.measurements.IgnitionStatus;
 import com.openxc.measurements.SteeringWheelAngle;
 import com.openxc.units.Boolean;
+import com.openxc.measurements.Latitude;
+import com.openxc.measurements.Longitude;
+import com.openxc.measurements.TurnSignalStatus;
 
 import java.util.List;
 import java.util.Locale;

@@ -35,6 +35,7 @@ public class AchievementActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_achievement);
         startActivityForResult(
                 Games.Achievements
                         .getAchievementsIntent(apiClient),

@@ -11,7 +11,7 @@
         android:id="@+id/lottie_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:lottie_fileName="emoji_wink.json"
+        app:lottie_fileName="marker.json"
         android:layout_gravity="bottom"
         app:lottie_loop="true"
         app:lottie_autoPlay="true"/>
