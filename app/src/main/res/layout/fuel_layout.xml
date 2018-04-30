@@ -94,6 +94,27 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
         </TableRow>
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp" >
+
+            <TextView
+                android:id="@+id/turnSignalStatusTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Signal"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/turnSignalStatusTxt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Result"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </TableRow>
     </TableLayout>
 
 

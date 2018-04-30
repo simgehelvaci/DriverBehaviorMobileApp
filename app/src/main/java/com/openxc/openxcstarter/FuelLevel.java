@@ -9,9 +9,11 @@ public class FuelLevel extends BaseActivity {
 
 
     private TextView FuelLevelTxt;
+    private TextView TurnSignalTxt;
     private TextView SpeedTxt;
     private TextView IgnitionTxt;
     private TextView DistanceTxt;
+    private TextView TurnSignalTxt2;
     private TextView FuelLevelTxt2;
     private TextView SpeedTxt2;
     private TextView IgnitionTxt2;
@@ -26,6 +28,8 @@ public class FuelLevel extends BaseActivity {
         SpeedTxt2 = (TextView) findViewById(R.id.speedTxt);
         IgnitionTxt2= (TextView) findViewById(R.id.ignitionStatusTxt);
         DistanceTxt2 = (TextView) findViewById(R.id.odometerTxt);
+        TurnSignalTxt=(TextView)findViewById(R.id.turnSignalStatusTxt);
+        TurnSignalTxt2=(TextView)findViewById(R.id.turnSignalStatusTxt2);
 
         FuelLevelTxt= (TextView) findViewById(R.id.fuel_levelTxt2);
         SpeedTxt = (TextView) findViewById(R.id.speedTxt2);
@@ -57,5 +61,10 @@ public class FuelLevel extends BaseActivity {
     public void onDistanceUpdate() {
         super.onDistanceUpdate();
         DistanceTxt.setText(BaseActivity.DISTANCE);
+    }
+    @Override
+    public void onTurnSignalStatusUpdate() {
+        super.onDistanceUpdate();
+        TurnSignalTxt2.setText(BaseActivity.TURNSIGNALSTATUS);
     }
 }

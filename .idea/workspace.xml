@@ -6,18 +6,17 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="bok" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="972539fa-1ea2-4f69-9b80-5713abf71ce8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/car.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/assets/star.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/leaderboard_layout.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FileReadWriteHelper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/LeaderBoard.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/LeaderBoard.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_achievement.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_achievement.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FuelLevel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FuelLevel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fuel_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fuel_layout.xml" />
     </list>
     <ignored path="openxc-starter-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -135,100 +134,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EmergencyButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/EmergencyButton.java">
+      <file leaf-file-name="BaseActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="emergency_button.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/emergency_button.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="39" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="leaderboard_layout.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/leaderboard_layout.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="36" lean-forward="false" selection-start-line="9" selection-start-column="3" selection-end-line="16" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fuel_layout.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fuel_layout.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="47" lean-forward="false" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FuelLevel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FuelLevel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="24" column="7" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+            <state relative-caret-position="5518">
+              <caret line="694" column="0" lean-forward="false" selection-start-line="694" selection-start-column="0" selection-end-line="694" selection-end-column="0" />
               <folding>
-                <marker date="1524935766245" expanded="true" signature="1701:1707" ph="{...}" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#3512#4578#0" expanded="true" />
+                <element signature="e#3733#4461#0" expanded="true" />
+                <element signature="e#4460#4461#0" expanded="true" />
+                <element signature="e#4577#4578#0" expanded="true" />
+                <element signature="e#4774#5106#0" expanded="true" />
+                <element signature="e#5105#5106#0" expanded="true" />
+                <element signature="e#5197#6175#0" expanded="true" />
+                <element signature="e#6174#6175#0" expanded="true" />
+                <element signature="method#hardBrakeDetected#0;class#BaseActivity#0" expanded="false" />
+                <element signature="method#ignitionOffDetected#0;class#BaseActivity#0" expanded="false" />
+                <element signature="e#9487#9540#0" expanded="true" />
+                <element signature="e#10184#10230#0" expanded="true" />
+                <element signature="method#ignitionOnDetected#0;class#BaseActivity#0" expanded="false" />
+                <element signature="method#gForceTracker#0;class#BaseActivity#0" expanded="false" />
+                <element signature="method#checkTimeSince#0;class#BaseActivity#0" expanded="false" />
+                <element signature="e#12928#12995#0" expanded="false" />
+                <element signature="e#13259#13321#0" expanded="false" />
+                <element signature="e#13542#13600#0" expanded="false" />
+                <element signature="e#14141#14208#0" expanded="false" />
+                <element signature="e#14466#14528#0" expanded="false" />
+                <element signature="e#14749#14807#0" expanded="false" />
+                <element signature="e#15331#15398#0" expanded="false" />
+                <element signature="e#15641#15703#0" expanded="false" />
+                <element signature="e#15924#15982#0" expanded="false" />
+                <element signature="e#17686#17753#0" expanded="false" />
+                <element signature="e#17992#18054#0" expanded="false" />
+                <element signature="e#18275#18333#0" expanded="false" />
+                <element signature="e#18893#18960#0" expanded="false" />
+                <element signature="e#19226#19288#0" expanded="false" />
+                <element signature="e#19509#19567#0" expanded="false" />
+                <element signature="e#20580#20647#0" expanded="false" />
+                <element signature="e#20897#20959#0" expanded="false" />
+                <element signature="e#21180#21238#0" expanded="false" />
+                <element signature="e#21879#21946#0" expanded="false" />
+                <element signature="e#22180#22242#0" expanded="false" />
+                <element signature="e#22463#22521#0" expanded="false" />
+                <element signature="e#22985#23052#0" expanded="false" />
+                <element signature="e#23318#23380#0" expanded="false" />
+                <element signature="e#23600#23658#0" expanded="false" />
+                <element signature="class#24031:26075" expanded="false" />
+                <element signature="method#onCreateOptionsMenu#0;class#BaseActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LeaderBoard.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/LeaderBoard.java">
+      <file leaf-file-name="FileReadWriteHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FileReadWriteHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="495">
+              <caret line="33" column="5" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="33" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider editor-type-id="android-manifest">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="50" column="48" lean-forward="false" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_achievement.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_achievement.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-designer2">
-            <state />
           </provider>
         </entry>
       </file>
@@ -237,8 +204,35 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
               <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FuelLevel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FuelLevel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="975">
+              <caret line="67" column="51" lean-forward="false" selection-start-line="67" selection-start-column="51" selection-end-line="67" selection-end-column="51" />
+              <folding>
+                <marker date="1525011678760" expanded="true" signature="1920:1926" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="android-manifest">
+            <state />
           </provider>
         </entry>
       </file>
@@ -249,16 +243,13 @@
       <list>
         <option value="resourceFile" />
         <option value="valueResourceFile" />
-        <option value="Class" />
         <option value="layoutResourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mconn</find>
-      <find>mvehic</find>
-      <find>runon</find>
       <find>mvehicle</find>
       <find>statusbar</find>
       <find>settext</find>
@@ -286,6 +277,9 @@
       <find>acceleratorPedalOver70</find>
       <find>70</find>
       <find>lat</find>
+      <find>turnsignal</find>
+      <find>angle</find>
+      <find>writeToFile</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2785,7 +2779,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Book_Activity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/NearestGasStation.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/UserName.java" />
@@ -2815,7 +2808,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/DataParser.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Location.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/brakepedal_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BrakePedalPosition.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/RecyclerViewAdapter.java" />
@@ -2825,7 +2817,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_maps.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/GetNearbyPlacesData.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/MapsActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/settings_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/EmergencyButton.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Settings.java" />
@@ -2833,16 +2824,19 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/emergency_button.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/LeaderBoard.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/leaderboard_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FuelLevel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fuel_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_achievement.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fuel_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FuelLevel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FileReadWriteHelper.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="145" />
+    <option name="x" value="57" />
     <option name="y" value="23" />
-    <option name="width" value="1132" />
+    <option name="width" value="1275" />
     <option name="height" value="817" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -2862,22 +2856,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3008,6 +2986,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="menu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -3042,34 +3050,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3081,7 +3079,7 @@
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="2.3.3" />
-    <property name="SearchEverywhereHistoryKey" value="sh&#9;PSI&#9;JAVA://sun.security.ec.ECDSASignature.SHA1" />
+    <property name="SearchEverywhereHistoryKey" value="config.txt&#9;null&#9;null&#10;sh&#9;PSI&#9;JAVA://sun.security.ec.ECDSASignature.SHA1" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -3224,7 +3222,8 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524936336503" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525072675946" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -3271,7 +3270,8 @@
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
       </Profilers>
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524936336503" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525072675947" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -3453,7 +3453,8 @@
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
       <method>
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1524936336505" />
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525072675948" />
       </method>
     </configuration>
     <list size="3">
@@ -3512,27 +3513,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="145" y="23" width="1132" height="817" extended-state="0" />
+    <frame x="57" y="23" width="1275" height="817" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32737276" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3645117" sideWeight="0.45422032" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.45422032" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22283356" sideWeight="0.13486238" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.02248996" sideWeight="0.49172577" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22283356" sideWeight="0.86513764" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.081155434" sideWeight="0.86513764" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32737276" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2173315" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.389271" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37789905" sideWeight="0.5135909" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3119266" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34306568" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904148" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2489121" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2846924" sideWeight="0.50827426" order="3" side_tool="true" content_ui="tabs" />
@@ -3599,17 +3600,12 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="6" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Book.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3879,8 +3875,8 @@
         <state relative-caret-position="163">
           <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding>
-            <element signature="e#1656#2134#0" expanded="true" />
-            <element signature="e#2133#2134#0" expanded="true" />
+            <element signature="e#1656#2134#0" expanded="false" />
+            <element signature="e#2133#2134#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3904,16 +3900,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="50" column="13" lean-forward="false" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/achievements_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="614">
@@ -3925,38 +3911,14 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/trophy.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/EmergencyButton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/emergency_button.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="39" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/trophy.json" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/AchievementActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3968,15 +3930,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/star.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="50" column="48" lean-forward="false" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fuel_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="113" column="30" lean-forward="false" selection-start-line="113" selection-start-column="30" selection-end-line="113" selection-end-column="30" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/leaderboard_layout.xml">
@@ -3990,20 +3959,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FuelLevel.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/emergency_button.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="24" column="7" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-          <folding>
-            <marker date="1524935766245" expanded="true" signature="1701:1707" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fuel_layout.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="47" lean-forward="false" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+        <state relative-caret-position="330">
+          <caret line="22" column="39" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -4011,10 +3970,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/star.json">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/EmergencyButton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="235">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -4028,6 +3987,88 @@
       </provider>
       <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FuelLevel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="67" column="51" lean-forward="false" selection-start-line="67" selection-start-column="51" selection-end-line="67" selection-end-column="51" />
+          <folding>
+            <marker date="1525011678760" expanded="true" signature="1920:1926" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FileReadWriteHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="5" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5518">
+          <caret line="694" column="0" lean-forward="false" selection-start-line="694" selection-start-column="0" selection-end-line="694" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3512#4578#0" expanded="true" />
+            <element signature="e#3733#4461#0" expanded="true" />
+            <element signature="e#4460#4461#0" expanded="true" />
+            <element signature="e#4577#4578#0" expanded="true" />
+            <element signature="e#4774#5106#0" expanded="true" />
+            <element signature="e#5105#5106#0" expanded="true" />
+            <element signature="e#5197#6175#0" expanded="true" />
+            <element signature="e#6174#6175#0" expanded="true" />
+            <element signature="method#hardBrakeDetected#0;class#BaseActivity#0" expanded="false" />
+            <element signature="method#ignitionOffDetected#0;class#BaseActivity#0" expanded="false" />
+            <element signature="e#9487#9540#0" expanded="true" />
+            <element signature="e#10184#10230#0" expanded="true" />
+            <element signature="method#ignitionOnDetected#0;class#BaseActivity#0" expanded="false" />
+            <element signature="method#gForceTracker#0;class#BaseActivity#0" expanded="false" />
+            <element signature="method#checkTimeSince#0;class#BaseActivity#0" expanded="false" />
+            <element signature="e#12928#12995#0" expanded="false" />
+            <element signature="e#13259#13321#0" expanded="false" />
+            <element signature="e#13542#13600#0" expanded="false" />
+            <element signature="e#14141#14208#0" expanded="false" />
+            <element signature="e#14466#14528#0" expanded="false" />
+            <element signature="e#14749#14807#0" expanded="false" />
+            <element signature="e#15331#15398#0" expanded="false" />
+            <element signature="e#15641#15703#0" expanded="false" />
+            <element signature="e#15924#15982#0" expanded="false" />
+            <element signature="e#17686#17753#0" expanded="false" />
+            <element signature="e#17992#18054#0" expanded="false" />
+            <element signature="e#18275#18333#0" expanded="false" />
+            <element signature="e#18893#18960#0" expanded="false" />
+            <element signature="e#19226#19288#0" expanded="false" />
+            <element signature="e#19509#19567#0" expanded="false" />
+            <element signature="e#20580#20647#0" expanded="false" />
+            <element signature="e#20897#20959#0" expanded="false" />
+            <element signature="e#21180#21238#0" expanded="false" />
+            <element signature="e#21879#21946#0" expanded="false" />
+            <element signature="e#22180#22242#0" expanded="false" />
+            <element signature="e#22463#22521#0" expanded="false" />
+            <element signature="e#22985#23052#0" expanded="false" />
+            <element signature="e#23318#23380#0" expanded="false" />
+            <element signature="e#23600#23658#0" expanded="false" />
+            <element signature="class#24031:26075" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#BaseActivity#0" expanded="false" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

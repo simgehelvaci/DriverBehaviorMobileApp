@@ -1,11 +1,13 @@
 package com.openxc.openxcstarter;
 
+import android.app.Application;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Environment;
 import android.os.IBinder;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -43,6 +45,16 @@ import com.openxc.measurements.Latitude;
 import com.openxc.measurements.Longitude;
 import com.openxc.measurements.TurnSignalStatus;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -68,6 +80,7 @@ public class BaseActivity extends AppCompatActivity {
     public static String ACCELERATORPEDALPOSITION;
     public static String BRAKEPEDALPOSITION;
     public static String STEERINGWHEELANGLE;
+    public static String TURNSIGNALSTATUS ="LEFT";
     private int SPEEDLIMIT=70;
 
     public static int status = 100;
@@ -86,9 +99,45 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+
+
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
+        Thread t = new Thread() {
+
+            @Override
+            public void run() {
+                try {
+                    while (!isInterrupted()) {
+                        Thread.sleep(1000);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+
+                                if(System.currentTimeMillis()%2==0){
+                                    TURNSIGNALSTATUS ="LEFT";
+                                    onTurnSignalStatusUpdate();
+                                    //writeToFile(TURNSIGNALSTATUS);
+
+
+
+                                }
+                                else{
+                                    TURNSIGNALSTATUS ="RIGHT";
+                                    onTurnSignalStatusUpdate();
+                                    //writeToFile(TURNSIGNALSTATUS);
+                                }
+                            }
+                        });
+                    }
+                } catch (InterruptedException e) {
+                }
+            }
+        };
+
+        t.start();
         apiClient = new GoogleApiClient.Builder(this)
                 .addApi(Games.API)
                 .addScope(Games.SCOPE_GAMES)
@@ -133,8 +182,6 @@ public class BaseActivity extends AppCompatActivity {
 
 
 
-
-
     public int getStatus() {
         return status;
     }
@@ -153,6 +200,9 @@ public class BaseActivity extends AppCompatActivity {
 
     }
     public void onSpeedUpdate() {
+
+    }
+    public void onTurnSignalStatusUpdate(){
 
     }
     public void onEngineSpeedUpdate() {
@@ -233,7 +283,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
 
-        public boolean ignitionOffDetected(long time) {
+    public boolean ignitionOffDetected(long time) {
         if (ignitionOffDetectedTimer == -1) {
             ignitionOffDetectedTimer = time;
 
@@ -336,11 +386,7 @@ public class BaseActivity extends AppCompatActivity {
 
     }
 
-    /* This is an OpenXC measurement listener object - the type is recognized
-     * by the VehicleManager as something that can receive measurement updates.
-     * Later in the file, we'll ask the VehicleManager to call the receive()
-     * function here whenever a new EngineSpeed value arrives.
-     */
+
 
     SteeringWheelAngle.Listener mSteeringWheelAngleListener = new EngineSpeed.Listener() {
         @Override
@@ -359,13 +405,36 @@ public class BaseActivity extends AppCompatActivity {
                     // the latest value
                     STEERINGWHEELANGLE= (steeringWheelAngle.getValue().toString());
                     onSteeringWheelAngleUpdate();
-                    Log.d("angle:",STEERINGWHEELANGLE);
+                    //Log.d("angle:",STEERINGWHEELANGLE);
 
                 }
             });
         }
     };
 
+    TurnSignalStatus.Listener mTurnSignalStatusListener = new TurnSignalStatus.Listener() {
+        @Override
+        public void receive(Measurement measurement) {
+            // When we receive a new EngineSpeed value from the car, we want to
+            // update the UI to display the new value. First we cast the generic
+            // Measurement back to the type we know it to be, an EngineSpeed.
+            final TurnSignalStatus turnSignalStatus = (TurnSignalStatus) measurement;
+            // In order to modify the UI, we have to make sure the code is
+            // running on the "UI thread" - Google around for this, it's an
+            // important concept in Android.
+            runOnUiThread(new Runnable() {
+                public void run() {
+                    // Finally, we've got a new value and we're running on the
+                    // UI thread - we set the text of the EngineSpeed view to
+                    // the latest value
+                    TURNSIGNALSTATUS= (turnSignalStatus.getValue().toString());
+                    onTurnSignalStatusUpdate();
+                    Log.d("TURNSIGNALSTATUS:",TURNSIGNALSTATUS);
+
+                }
+            });
+        }
+    };
 
 
 
@@ -612,6 +681,7 @@ public class BaseActivity extends AppCompatActivity {
             mVehicleManager.addListener(AcceleratorPedalPosition.class, mAcceleratorPedalPositionListener);
             mVehicleManager.addListener(TransmissionGearPosition.class, mGearPositionListener);
             mVehicleManager.addListener(BrakePedalStatus.class, mBrakePedalStatusListener);
+            mVehicleManager.addListener(TurnSignalStatus.class,mTurnSignalStatusListener);
         }
 
         // Called when the connection with the service disconnects unexpectedly
