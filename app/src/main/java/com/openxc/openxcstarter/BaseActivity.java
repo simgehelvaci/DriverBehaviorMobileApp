@@ -102,6 +102,7 @@ public class BaseActivity extends AppCompatActivity {
     public static String ACCELERATORPEDALPOSITION;
     public static String BRAKEPEDALPOSITION;
     public static String STEERINGWHEELANGLE;
+    public  static Double ODOMETER = 0.0;
     public static String TURNSIGNALSTATUS ="LEFT";
     private int SPEEDLIMIT=70;
 
@@ -319,24 +320,44 @@ public class BaseActivity extends AppCompatActivity {
             ignitionOffDetectedTimer = -1;
             playing = false;
 
-            Toast.makeText(getApplicationContext(), "Game over", Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), "Game over", Toast.LENGTH_LONG).show();
+            if(apiClient.isConnected()){
+                // good
+                Games.Leaderboards.submitScore(apiClient,
+                        getString(R.string.leaderboard_my_little_leaderboard),
+                        statusPercentage);
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference();
 
-            Games.Leaderboards.submitScore(apiClient,
-                    getString(R.string.leaderboard_my_little_leaderboard),
-                    statusPercentage);
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference myRef = database.getReference();
 
+                myRef.child("Drivers").child("Driver_id").setValue("55");
+                String playerName = Games.Players.getCurrentPlayer(apiClient).getName();
+                myRef.child("Drivers").child("Driver_name").setValue(playerName);
+                myRef.child("Drivers").child("Driver_score").setValue(statusPercentage);
+                if(statusPercentage>90) {
+                    Games.Achievements
+                            .unlock(apiClient,
+                                    getString(R.string.achievement_perfect_driving));
+                }
 
-            myRef.child("Drivers").child("Driver_id").setValue("55");
-            String playerName = Games.Players.getCurrentPlayer(apiClient).getName();
-            myRef.child("Drivers").child("Driver_name").setValue(playerName);
-            myRef.child("Drivers").child("Driver_score").setValue(statusPercentage);
-            if(statusPercentage>90) {
-                Games.Achievements
-                        .unlock(apiClient,
-                                getString(R.string.achievement_lightning_fast));
+                if(ODOMETER>1.0) {
+                    Games.Achievements
+                            .unlock(apiClient,
+                                    getString(R.string.achievement_long_road_driver_candidate));
+                }
+                if(ODOMETER>100.0) {
+                    Games.Achievements
+                            .unlock(apiClient,
+                                    getString(R.string.achievement_long_road_driver_master));
+                }
+            }else{
+                //connect it
+                apiClient.connect(GoogleApiClient.SIGN_IN_MODE_REQUIRED);
+                Toast.makeText(getApplicationContext(), "SIGN_IN_MODE_REQUIRED", Toast.LENGTH_LONG).show();
             }
+
+
+
 
         }
 
@@ -639,6 +660,7 @@ public class BaseActivity extends AppCompatActivity {
                     // UI thread - we set the text of the EngineSpeed view to
                     // the latest value
                     DISTANCE=distance.getValue().toString();
+                    ODOMETER =distance.getValue().doubleValue();
                     onDistanceUpdate();
 
 

@@ -11,13 +11,23 @@ Save this file as res/values/games-ids.xml in your project.
     <string name="app_id" translatable="false">136256785114</string>
     <!-- package_name -->
     <string name="package_name" translatable="false">com.openxc.openxcstarter</string>
-    <!-- achievement Lightning Fast -->
-    <string name="achievement_lightning_fast" translatable="false">CgkI2pWmzPsDEAIQAg</string>
+
     <!-- leaderboard My Little Leaderboard -->
     <string name="leaderboard_my_little_leaderboard" translatable="false">CgkI2pWmzPsDEAIQAA</string>
     <string name="app_name">DRIVE</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_map">MapActivity</string>
+
+
+
+        <!-- achievement Perfect Driving -->
+        <string name="achievement_perfect_driving" translatable="false">CgkI2pWmzPsDEAIQAg</string>
+        <!-- achievement Long Road Driver Candidate -->
+        <string name="achievement_long_road_driver_candidate" translatable="false">CgkI2pWmzPsDEAIQAw</string>
+        <!-- achievement Long Road Driver Master -->
+        <string name="achievement_long_road_driver_master" translatable="false">CgkI2pWmzPsDEAIQBA</string>
+        <!-- leaderboard My Little Leaderboard -->
+
 
 </resources>

@@ -36,16 +36,28 @@ public class AchievementActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_achievement);
-        startActivityForResult(
-                Games.Achievements
-                        .getAchievementsIntent(apiClient),
-                1
-        );
-        startActivityForResult(
-                Games.Achievements
-                        .getAchievementsIntent(apiClient),
-                2
-        );
+
+        if(apiClient.isConnected()){
+            // good
+            startActivityForResult(
+                    Games.Achievements
+                            .getAchievementsIntent(apiClient),
+                    1
+            );
+            startActivityForResult(
+                    Games.Achievements
+                            .getAchievementsIntent(apiClient),
+                    2
+            );
+
+        }else{
+            //connect it
+            apiClient.connect(GoogleApiClient.SIGN_IN_MODE_REQUIRED);
+            Toast.makeText(getApplicationContext(), "SIGN_IN_MODE_REQUIRED Achv", Toast.LENGTH_LONG).show();
+        }
+
+
+
 
     }
 
