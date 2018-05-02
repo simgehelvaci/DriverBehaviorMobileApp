@@ -19,6 +19,17 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.games.Games;
@@ -57,14 +68,25 @@ import java.io.OutputStreamWriter;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import com.openxc.openxcstarter.SQLiteDB;
+
 
 import static com.google.android.gms.analytics.internal.zzy.ex;
 
 public class BaseActivity extends AppCompatActivity {
     private static final String TAG = "StarterActivity";
 
-    private VehicleManager mVehicleManager;
+    private String detectedSignalName;
+    private String detectedBirthMiliSeconds;
+    private String currentSignalName;
+    private String currentBirthMiliSeconds;
+    private Contact contact;
+    private SQLiteDB sqLiteDB;
 
+
+
+
+    private VehicleManager mVehicleManager;
     private long gForceTimer = -1;
     private double gForceVelocity = -1;
     private final double gConstant = 9.80665;
@@ -98,6 +120,8 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Contact contact = new Contact();
+
 
 
 
