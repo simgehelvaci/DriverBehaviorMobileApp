@@ -41,7 +41,6 @@
         android:layout_centerVertical="true"
         android:fontFamily="@font/aclonica"
         android:gravity="center"
-        android:text="100"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="36sp"
@@ -69,7 +68,6 @@
         android:layout_marginStart="15dp"
         android:layout_toEndOf="@+id/txt_Score"
         android:fontFamily="@font/aclonica"
-        android:text="100"
         android:textSize="18sp"
         android:textStyle="bold" />
 
@@ -94,7 +92,6 @@
         android:layout_alignTop="@+id/txt_AverageScore"
         android:layout_marginEnd="12dp"
         android:fontFamily="@font/aclonica"
-        android:text="100"
         android:textSize="18sp"
         android:textStyle="bold" />
 </RelativeLayout>

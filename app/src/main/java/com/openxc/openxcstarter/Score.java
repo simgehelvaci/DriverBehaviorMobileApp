@@ -27,9 +27,9 @@ public class Score extends BaseActivity {
         scoreValue = (TextView) findViewById(R.id.txt_ScoreValue);
         averageScoreText = (TextView) findViewById(R.id.txt_AverageScore);
         averageScoreValue=(TextView) findViewById(R.id.txt_AverageScoreValue);
-       // statusBar.setMax(statusPercentage);
+        statusBar.setMax(statusPercentage);
 
-       // setStatus(getStatus());
+        setStatus(getStatus());
 
 
     }

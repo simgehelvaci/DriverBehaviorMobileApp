@@ -330,10 +330,13 @@ public class BaseActivity extends AppCompatActivity {
                 DatabaseReference myRef = database.getReference();
 
 
-                myRef.child("Drivers").child("Driver_id").setValue("55");
+                //myRef.child("Drivers").child("Driver_id").setValue("55");
                 String playerName = Games.Players.getCurrentPlayer(apiClient).getName();
-                myRef.child("Drivers").child("Driver_name").setValue(playerName);
-                myRef.child("Drivers").child("Driver_score").setValue(statusPercentage);
+                String playerId = Games.Players.getCurrentPlayer(apiClient).getPlayerId();
+
+                myRef.child("Drivers").child(playerId ).child("Driver_name").setValue(playerName);
+
+                myRef.child("Drivers").child(playerId ).child("Driver_score").setValue(statusPercentage);
                 if(statusPercentage>90) {
                     Games.Achievements
                             .unlock(apiClient,

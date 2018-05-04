@@ -11,19 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="972539fa-1ea2-4f69-9b80-5713abf71ce8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/font/aclonica.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values/font_certs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values/preloaded_fonts.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/AchievementActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/AchievementActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/LeaderBoard.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/LeaderBoard.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Score.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Score.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/StarterActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/StarterActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_starter.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_starter.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/score_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/score_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <ignored path="openxc-starter-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -144,54 +135,100 @@
       <file leaf-file-name="BaseActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3715">
-              <caret line="406" column="25" lean-forward="false" selection-start-line="406" selection-start-column="25" selection-end-line="406" selection-end-column="25" />
+            <state relative-caret-position="-1176">
+              <caret line="337" column="0" lean-forward="false" selection-start-line="337" selection-start-column="0" selection-end-line="337" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4169#5235#0" expanded="true" />
+                <element signature="e#4390#5118#0" expanded="true" />
+                <element signature="e#5117#5118#0" expanded="true" />
+                <element signature="e#5234#5235#0" expanded="true" />
+                <element signature="e#5431#5763#0" expanded="true" />
+                <element signature="e#5762#5763#0" expanded="true" />
+                <element signature="e#5854#6832#0" expanded="true" />
+                <element signature="e#6831#6832#0" expanded="true" />
                 <element signature="method#hardBrakeDetected#0;class#BaseActivity#0" expanded="false" />
-                <element signature="e#10959#11006#0" expanded="true" />
-                <element signature="e#11185#11243#0" expanded="true" />
-                <element signature="e#11423#11478#0" expanded="true" />
+                <element signature="e#10218#10271#0" expanded="true" />
+                <element signature="e#11088#11135#0" expanded="true" />
+                <element signature="e#11314#11372#0" expanded="true" />
+                <element signature="e#11552#11607#0" expanded="true" />
                 <element signature="method#gForceTracker#0;class#BaseActivity#0" expanded="false" />
-                <element signature="e#14427#14494#0" expanded="false" />
-                <element signature="e#14758#14820#0" expanded="false" />
-                <element signature="e#15041#15099#0" expanded="false" />
-                <element signature="e#15640#15707#0" expanded="false" />
-                <element signature="e#15965#16027#0" expanded="false" />
-                <element signature="e#16248#16306#0" expanded="false" />
-                <element signature="e#16830#16897#0" expanded="false" />
-                <element signature="e#17140#17202#0" expanded="false" />
-                <element signature="e#17423#17481#0" expanded="false" />
-                <element signature="e#19185#19252#0" expanded="false" />
-                <element signature="e#19491#19553#0" expanded="false" />
-                <element signature="e#19774#19832#0" expanded="false" />
-                <element signature="e#20392#20459#0" expanded="false" />
-                <element signature="e#20725#20787#0" expanded="false" />
-                <element signature="e#21008#21066#0" expanded="false" />
-                <element signature="e#22079#22146#0" expanded="false" />
-                <element signature="e#22396#22458#0" expanded="false" />
-                <element signature="e#22679#22737#0" expanded="false" />
-                <element signature="e#23378#23445#0" expanded="false" />
-                <element signature="e#23679#23741#0" expanded="false" />
-                <element signature="e#23962#24020#0" expanded="false" />
-                <element signature="e#24549#24616#0" expanded="false" />
-                <element signature="e#24882#24944#0" expanded="false" />
-                <element signature="e#25164#25222#0" expanded="false" />
-                <element signature="class#25595:27639" expanded="false" />
+                <element signature="e#14442#15589#0" expanded="true" />
+                <element signature="e#14556#14623#0" expanded="false" />
+                <element signature="e#14887#14949#0" expanded="false" />
+                <element signature="e#15097#15571#0" expanded="true" />
+                <element signature="e#15170#15228#0" expanded="false" />
+                <element signature="e#15570#15571#0" expanded="true" />
+                <element signature="e#15588#15589#0" expanded="true" />
+                <element signature="e#15650#16797#0" expanded="true" />
+                <element signature="e#15769#15836#0" expanded="false" />
+                <element signature="e#16094#16156#0" expanded="false" />
+                <element signature="e#16304#16779#0" expanded="true" />
+                <element signature="e#16377#16435#0" expanded="false" />
+                <element signature="e#16778#16779#0" expanded="true" />
+                <element signature="e#16796#16797#0" expanded="true" />
+                <element signature="e#16845#17892#0" expanded="true" />
+                <element signature="e#16959#17026#0" expanded="false" />
+                <element signature="e#17269#17331#0" expanded="false" />
+                <element signature="e#17479#17874#0" expanded="true" />
+                <element signature="e#17552#17610#0" expanded="false" />
+                <element signature="e#17873#17874#0" expanded="true" />
+                <element signature="e#17891#17892#0" expanded="true" />
+                <element signature="e#17943#18692#0" expanded="true" />
+                <element signature="e#18154#18674#0" expanded="true" />
+                <element signature="e#18673#18674#0" expanded="true" />
+                <element signature="e#18691#18692#0" expanded="true" />
+                <element signature="e#18739#19150#0" expanded="true" />
+                <element signature="e#18936#19132#0" expanded="true" />
+                <element signature="e#19131#19132#0" expanded="true" />
+                <element signature="e#19149#19150#0" expanded="true" />
+                <element signature="e#19198#20316#0" expanded="true" />
+                <element signature="e#19314#19381#0" expanded="false" />
+                <element signature="e#19620#19682#0" expanded="false" />
+                <element signature="e#19830#20298#0" expanded="true" />
+                <element signature="e#19903#19961#0" expanded="false" />
+                <element signature="e#20297#20298#0" expanded="true" />
+                <element signature="e#20315#20316#0" expanded="true" />
+                <element signature="e#20393#22027#0" expanded="true" />
+                <element signature="e#20521#20588#0" expanded="false" />
+                <element signature="e#20854#20916#0" expanded="false" />
+                <element signature="e#21064#22009#0" expanded="true" />
+                <element signature="e#21137#21195#0" expanded="false" />
+                <element signature="e#22008#22009#0" expanded="true" />
+                <element signature="e#22026#22027#0" expanded="true" />
+                <element signature="e#22089#23351#0" expanded="true" />
+                <element signature="e#22208#22275#0" expanded="false" />
+                <element signature="e#22525#22587#0" expanded="false" />
+                <element signature="e#22735#23333#0" expanded="true" />
+                <element signature="e#22808#22866#0" expanded="false" />
+                <element signature="e#23332#23333#0" expanded="true" />
+                <element signature="e#23350#23351#0" expanded="true" />
+                <element signature="e#23396#24486#0" expanded="true" />
+                <element signature="e#23507#23574#0" expanded="false" />
+                <element signature="e#23808#23870#0" expanded="false" />
+                <element signature="e#24018#24468#0" expanded="true" />
+                <element signature="e#24091#24149#0" expanded="false" />
+                <element signature="e#24467#24468#0" expanded="true" />
+                <element signature="e#24485#24486#0" expanded="true" />
+                <element signature="e#24551#25669#0" expanded="true" />
+                <element signature="e#24678#24745#0" expanded="false" />
+                <element signature="e#25011#25073#0" expanded="false" />
+                <element signature="e#25220#25649#0" expanded="true" />
+                <element signature="e#25293#25351#0" expanded="false" />
+                <element signature="e#25648#25649#0" expanded="true" />
+                <element signature="e#25668#25669#0" expanded="true" />
+                <element signature="class#25724:27768" expanded="false" />
                 <element signature="method#onCreateOptionsMenu#0;class#BaseActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emergency_button.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/emergency_button.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="39" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+            <state relative-caret-position="225">
+              <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -220,8 +257,8 @@
       <file leaf-file-name="Score.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Score.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="43" column="47" lean-forward="false" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+            <state relative-caret-position="200">
+              <caret line="29" column="7" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -237,11 +274,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StarterActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StarterActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/StarterActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="375">
+              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -260,7 +297,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="score_layout.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="score_layout.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/score_layout.xml">
           <provider selected="true" editor-type-id="android-designer2">
             <state />
@@ -297,7 +334,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>gearpos</find>
       <find>onAcceleratorPedalPositionUpdate()</find>
       <find>brake</find>
       <find>id</find>
@@ -327,6 +363,7 @@
       <find>odometer</find>
       <find>ignition</find>
       <find>SIGN_</find>
+      <find>thro</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2870,20 +2907,20 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/ContactField.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/SQLiteDB.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/AchievementActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/LeaderBoard.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/score_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Score.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_starter.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/StarterActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Score.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/score_layout.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="91" />
-    <option name="y" value="23" />
-    <option name="width" value="1275" />
+    <option name="x" value="80" />
+    <option name="y" value="29" />
+    <option name="width" value="1333" />
     <option name="height" value="817" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -2902,6 +2939,21 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3126,21 +3178,6 @@
       </pane>
       <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3296,7 +3333,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525288270757" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525422889658" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -3344,7 +3381,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525288270757" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525422889658" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -3376,27 +3413,6 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <method />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
@@ -3527,7 +3543,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525288270758" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525422889660" />
       </method>
     </configuration>
     <list size="3">
@@ -3586,33 +3602,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="91" y="23" width="1275" height="817" extended-state="0" />
+    <frame x="80" y="29" width="1333" height="817" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22283356" sideWeight="0.13486238" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.389271" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2489121" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2846924" sideWeight="0.50827426" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32737276" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.45422032" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.02248996" sideWeight="0.49172577" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13204952" sideWeight="0.86513764" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22283356" sideWeight="0.13486238" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13204952" sideWeight="0.86513764" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32737276" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.389271" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37789905" sideWeight="0.5135909" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33414435" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2338377" sideWeight="0.48802397" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31913245" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904148" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2489121" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2846924" sideWeight="0.50827426" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3623,6 +3637,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988802" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.02248996" sideWeight="0.49172577" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2338377" sideWeight="0.48802397" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -4025,14 +4041,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="37" lean-forward="false" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/emergency_button.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -4068,66 +4076,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3715">
-          <caret line="406" column="25" lean-forward="false" selection-start-line="406" selection-start-column="25" selection-end-line="406" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#hardBrakeDetected#0;class#BaseActivity#0" expanded="false" />
-            <element signature="e#10959#11006#0" expanded="true" />
-            <element signature="e#11185#11243#0" expanded="true" />
-            <element signature="e#11423#11478#0" expanded="true" />
-            <element signature="method#gForceTracker#0;class#BaseActivity#0" expanded="false" />
-            <element signature="e#14427#14494#0" expanded="false" />
-            <element signature="e#14758#14820#0" expanded="false" />
-            <element signature="e#15041#15099#0" expanded="false" />
-            <element signature="e#15640#15707#0" expanded="false" />
-            <element signature="e#15965#16027#0" expanded="false" />
-            <element signature="e#16248#16306#0" expanded="false" />
-            <element signature="e#16830#16897#0" expanded="false" />
-            <element signature="e#17140#17202#0" expanded="false" />
-            <element signature="e#17423#17481#0" expanded="false" />
-            <element signature="e#19185#19252#0" expanded="false" />
-            <element signature="e#19491#19553#0" expanded="false" />
-            <element signature="e#19774#19832#0" expanded="false" />
-            <element signature="e#20392#20459#0" expanded="false" />
-            <element signature="e#20725#20787#0" expanded="false" />
-            <element signature="e#21008#21066#0" expanded="false" />
-            <element signature="e#22079#22146#0" expanded="false" />
-            <element signature="e#22396#22458#0" expanded="false" />
-            <element signature="e#22679#22737#0" expanded="false" />
-            <element signature="e#23378#23445#0" expanded="false" />
-            <element signature="e#23679#23741#0" expanded="false" />
-            <element signature="e#23962#24020#0" expanded="false" />
-            <element signature="e#24549#24616#0" expanded="false" />
-            <element signature="e#24882#24944#0" expanded="false" />
-            <element signature="e#25164#25222#0" expanded="false" />
-            <element signature="class#25595:27639" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#BaseActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/score_layout.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Score.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="43" column="47" lean-forward="false" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/RecyclerViewAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -4149,8 +4097,125 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/StarterActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state relative-caret-position="375">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1176">
+          <caret line="337" column="0" lean-forward="false" selection-start-line="337" selection-start-column="0" selection-end-line="337" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4169#5235#0" expanded="true" />
+            <element signature="e#4390#5118#0" expanded="true" />
+            <element signature="e#5117#5118#0" expanded="true" />
+            <element signature="e#5234#5235#0" expanded="true" />
+            <element signature="e#5431#5763#0" expanded="true" />
+            <element signature="e#5762#5763#0" expanded="true" />
+            <element signature="e#5854#6832#0" expanded="true" />
+            <element signature="e#6831#6832#0" expanded="true" />
+            <element signature="method#hardBrakeDetected#0;class#BaseActivity#0" expanded="false" />
+            <element signature="e#10218#10271#0" expanded="true" />
+            <element signature="e#11088#11135#0" expanded="true" />
+            <element signature="e#11314#11372#0" expanded="true" />
+            <element signature="e#11552#11607#0" expanded="true" />
+            <element signature="method#gForceTracker#0;class#BaseActivity#0" expanded="false" />
+            <element signature="e#14442#15589#0" expanded="true" />
+            <element signature="e#14556#14623#0" expanded="false" />
+            <element signature="e#14887#14949#0" expanded="false" />
+            <element signature="e#15097#15571#0" expanded="true" />
+            <element signature="e#15170#15228#0" expanded="false" />
+            <element signature="e#15570#15571#0" expanded="true" />
+            <element signature="e#15588#15589#0" expanded="true" />
+            <element signature="e#15650#16797#0" expanded="true" />
+            <element signature="e#15769#15836#0" expanded="false" />
+            <element signature="e#16094#16156#0" expanded="false" />
+            <element signature="e#16304#16779#0" expanded="true" />
+            <element signature="e#16377#16435#0" expanded="false" />
+            <element signature="e#16778#16779#0" expanded="true" />
+            <element signature="e#16796#16797#0" expanded="true" />
+            <element signature="e#16845#17892#0" expanded="true" />
+            <element signature="e#16959#17026#0" expanded="false" />
+            <element signature="e#17269#17331#0" expanded="false" />
+            <element signature="e#17479#17874#0" expanded="true" />
+            <element signature="e#17552#17610#0" expanded="false" />
+            <element signature="e#17873#17874#0" expanded="true" />
+            <element signature="e#17891#17892#0" expanded="true" />
+            <element signature="e#17943#18692#0" expanded="true" />
+            <element signature="e#18154#18674#0" expanded="true" />
+            <element signature="e#18673#18674#0" expanded="true" />
+            <element signature="e#18691#18692#0" expanded="true" />
+            <element signature="e#18739#19150#0" expanded="true" />
+            <element signature="e#18936#19132#0" expanded="true" />
+            <element signature="e#19131#19132#0" expanded="true" />
+            <element signature="e#19149#19150#0" expanded="true" />
+            <element signature="e#19198#20316#0" expanded="true" />
+            <element signature="e#19314#19381#0" expanded="false" />
+            <element signature="e#19620#19682#0" expanded="false" />
+            <element signature="e#19830#20298#0" expanded="true" />
+            <element signature="e#19903#19961#0" expanded="false" />
+            <element signature="e#20297#20298#0" expanded="true" />
+            <element signature="e#20315#20316#0" expanded="true" />
+            <element signature="e#20393#22027#0" expanded="true" />
+            <element signature="e#20521#20588#0" expanded="false" />
+            <element signature="e#20854#20916#0" expanded="false" />
+            <element signature="e#21064#22009#0" expanded="true" />
+            <element signature="e#21137#21195#0" expanded="false" />
+            <element signature="e#22008#22009#0" expanded="true" />
+            <element signature="e#22026#22027#0" expanded="true" />
+            <element signature="e#22089#23351#0" expanded="true" />
+            <element signature="e#22208#22275#0" expanded="false" />
+            <element signature="e#22525#22587#0" expanded="false" />
+            <element signature="e#22735#23333#0" expanded="true" />
+            <element signature="e#22808#22866#0" expanded="false" />
+            <element signature="e#23332#23333#0" expanded="true" />
+            <element signature="e#23350#23351#0" expanded="true" />
+            <element signature="e#23396#24486#0" expanded="true" />
+            <element signature="e#23507#23574#0" expanded="false" />
+            <element signature="e#23808#23870#0" expanded="false" />
+            <element signature="e#24018#24468#0" expanded="true" />
+            <element signature="e#24091#24149#0" expanded="false" />
+            <element signature="e#24467#24468#0" expanded="true" />
+            <element signature="e#24485#24486#0" expanded="true" />
+            <element signature="e#24551#25669#0" expanded="true" />
+            <element signature="e#24678#24745#0" expanded="false" />
+            <element signature="e#25011#25073#0" expanded="false" />
+            <element signature="e#25220#25649#0" expanded="true" />
+            <element signature="e#25293#25351#0" expanded="false" />
+            <element signature="e#25648#25649#0" expanded="true" />
+            <element signature="e#25668#25669#0" expanded="true" />
+            <element signature="class#25724:27768" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#BaseActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Score.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="29" column="7" lean-forward="false" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/score_layout.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
           <folding />
         </state>
       </provider>
