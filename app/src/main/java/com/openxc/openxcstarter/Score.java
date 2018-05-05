@@ -42,6 +42,7 @@ public class Score extends BaseActivity {
 
     public void setStatus(int percentage) {
         if (percentage < 0) { percentage = 0; }
+        if (percentage > 99) { percentage = 100; }
         statusPercentage = percentage;
         //average status percentage: sum of status percentages so far divided by dayCount
         statusBar.setProgress(percentage);

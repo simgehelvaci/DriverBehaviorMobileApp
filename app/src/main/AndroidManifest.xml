@@ -59,11 +59,10 @@
         <activity android:name=".FuelLevel" />
         <activity android:name=".EmergencyButton" />
 
-        <activity android:name=".GearPosition" />
-        <activity android:name=".AcceleratorPedalPosition" />
         <activity android:name=".BrakePedalPosition" />
         <activity android:name=".Location" />
         <activity android:name=".Settings" />
+        <activity android:name=".SpeedActivity" />
         <activity android:name=".MapsActivity" />
         <activity
             android:name=".AchievementActivity"

@@ -49,6 +49,7 @@ public class StarterActivity extends BaseActivity {
         lstBook.add(new Book("Location POI","Google Maps","Description",R.drawable.route));
         lstBook.add(new Book("Fuel Info","OpenXC Input","Description",R.drawable.fuel));
         lstBook.add(new Book("Score","Evaluation","Description",R.drawable.score));
+        lstBook.add(new Book("Speed","OpenXC Output","Description",R.drawable.speed));
 
         lstBook.add(new Book("Emergency Button","SMS_Sender","Description",R.drawable.siren));
         lstBook.add(new Book("Pedal Position","OpenXC Input","Description",R.drawable.pedal));

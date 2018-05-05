@@ -105,9 +105,9 @@ public class BaseActivity extends AppCompatActivity {
     public  static Double ODOMETER = 0.0;
     public static String TURNSIGNALSTATUS ="LEFT";
     private int SPEEDLIMIT=70;
-
+    private Double lastDistance = -1.0;
     public static int status = 100;
-
+    public static double HIZ=0.0;
 
     private double gForce = -1;
     private double weight = 0.5;
@@ -287,9 +287,9 @@ public class BaseActivity extends AppCompatActivity {
             neutralGasDetectedTimer = time;
         }
         else if (time - neutralGasDetectedTimer > 3500) {
-            status = statusPercentage - 1;
+            //status = statusPercentage - 1;
             onStatusUpdate();
-            Toast.makeText(getApplicationContext(), "Throttle while gear neutral position", Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(), "Throttle while gear neutral position", Toast.LENGTH_LONG).show();
             neutralGasDetectedTimer = -1;
         }
     }
@@ -298,7 +298,7 @@ public class BaseActivity extends AppCompatActivity {
         if (brakePedalDetectedTimer == -1) {
             brakePedalDetectedTimer = time;
         }
-        else if (time - brakePedalDetectedTimer > 2500) {
+        else if (time - brakePedalDetectedTimer > 9500) {
             Toast.makeText(getApplicationContext(), "Brake Pedal Overused!", Toast.LENGTH_LONG).show();
             status = statusPercentage - 1;
             onStatusUpdate();
@@ -425,7 +425,10 @@ public class BaseActivity extends AppCompatActivity {
 //                        timer2.cancel(); //this will cancel the pedalOver70Timer of the system
 //                    }
 //                }, 5000);
+                Toast.makeText(getApplicationContext(), "Pedal position over 30", Toast.LENGTH_LONG).show();
+
                 acceleratorPedalOver70 = false;
+
             }
         }
         else {
@@ -568,9 +571,10 @@ public class BaseActivity extends AppCompatActivity {
                     // the latest value
                     gForceTracker(speed.getValue().doubleValue(), speed.getBirthtime());
 
-
+                    HIZ = speed.getValue().doubleValue();
                     SPEED= (speed.getValue().toString());
                     onSpeedUpdate();
+                    onHizUpdate();
 
                 }
             });
@@ -597,16 +601,18 @@ public class BaseActivity extends AppCompatActivity {
 
                     ACCELERATORPEDALPOSITION = pedalPos.toString();
                     onAcceleratorPedalPositionUpdate();
+                    onHizUpdate();
                     //checkTimeSince(position.getBirthtime(), true);
 
                     if (gearPosition.equalsIgnoreCase("neutral")) {
                         neutralGasDetected(position.getBirthtime());
                     }
 
-                    if (pedalPos > SPEEDLIMIT) {
+                    if (pedalPos > 30) {
                         checkTimeSince(position.getBirthtime(), true);
+
                     }
-                    else {
+                    else if (pedalPos <= 30) {
                         checkTimeSince(0, false);
                     }
 
@@ -616,6 +622,18 @@ public class BaseActivity extends AppCompatActivity {
         }
     };
 
+    private void distanceTravelled(Double d) {
+        if (lastDistance < 0) {
+            lastDistance = d;
+        }
+        else if (d - lastDistance > 0.3) {
+
+                status=statusPercentage ++;
+                lastDistance = -1.0;
+                Toast.makeText(getApplicationContext(), "+1 Point Good Driving!", Toast.LENGTH_LONG).show();
+
+        }
+    }
 
     BrakePedalStatus.Listener mBrakePedalStatusListener = new BrakePedalStatus.Listener() {
         @Override
@@ -665,7 +683,8 @@ public class BaseActivity extends AppCompatActivity {
                     DISTANCE=distance.getValue().toString();
                     ODOMETER =distance.getValue().doubleValue();
                     onDistanceUpdate();
-
+                    Double d = distance.getValue().doubleValue();
+                    distanceTravelled(d);
 
 
                 }
