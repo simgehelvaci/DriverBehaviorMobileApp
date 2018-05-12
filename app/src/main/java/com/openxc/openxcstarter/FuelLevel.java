@@ -18,6 +18,8 @@ public class FuelLevel extends BaseActivity {
     private TextView SpeedTxt2;
     private TextView IgnitionTxt2;
     private TextView DistanceTxt2;
+    private TextView AccPedalTxt;
+    private TextView AccPedalTxt2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,8 @@ public class FuelLevel extends BaseActivity {
         DistanceTxt2 = (TextView) findViewById(R.id.odometerTxt);
         TurnSignalTxt=(TextView)findViewById(R.id.turnSignalStatusTxt);
         TurnSignalTxt2=(TextView)findViewById(R.id.turnSignalStatusTxt2);
-
+        AccPedalTxt=(TextView) findViewById(R.id.accelerator_pedalTxt);
+        AccPedalTxt2=(TextView) findViewById(R.id.accelerator_pedalTxt2);
         FuelLevelTxt= (TextView) findViewById(R.id.fuel_levelTxt2);
         SpeedTxt = (TextView) findViewById(R.id.speedTxt2);
         IgnitionTxt= (TextView) findViewById(R.id.ignitionStatusTxt2);
@@ -46,6 +49,11 @@ public class FuelLevel extends BaseActivity {
     public void onFuelLevelUpdate() {
         super.onDistanceUpdate();
         FuelLevelTxt.setText(BaseActivity.FUEL);
+    }
+    @Override
+    public void  onAcceleratorPedalPositionUpdate() {
+        super.onAcceleratorPedalPositionUpdate();
+        AccPedalTxt2.setText(BaseActivity.ACCELERATORPEDALPOSITION);
     }
     @Override
     public void onSpeedUpdate() {

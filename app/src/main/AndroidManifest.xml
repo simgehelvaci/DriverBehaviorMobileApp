@@ -62,7 +62,7 @@
         <activity android:name=".BrakePedalPosition" />
         <activity android:name=".Location" />
         <activity android:name=".Settings" />
-        <activity android:name=".SpeedActivity" />
+        <activity android:name=".ErrorActivity" />
         <activity android:name=".MapsActivity" />
         <activity
             android:name=".AchievementActivity"

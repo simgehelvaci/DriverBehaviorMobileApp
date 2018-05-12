@@ -17,17 +17,17 @@
             android:layout_margin="20dp" >
 
             <TextView
-                android:id="@+id/speed_Txt"
+                android:id="@+id/aggresive_Txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Speed "
+                android:text="Aggressive Acceleration   "
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
-                android:id="@+id/speed_Txt2"
+                android:id="@+id/aggressive_Txt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fuel Level Result"
+                android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
         </TableRow>
@@ -39,17 +39,17 @@
             android:layout_margin="20dp" >
 
             <TextView
-                android:id="@+id/accelerator_pedalTxt"
-                android:layout_width="wrap_content"
+                android:id="@+id/harsh_Txt"
+                android:layout_width="279dp"
                 android:layout_height="wrap_content"
-                android:text="Accelerator Pedal "
+                android:text="Harsh Braking   "
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
-                android:id="@+id/accelerator_pedalTxt2"
+                android:id="@+id/harsh_Txt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Accelerator Pedal Result"
+                android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
         </TableRow>
@@ -60,17 +60,17 @@
             android:layout_margin="20dp" >
 
             <TextView
-                android:id="@+id/odometerTxt"
+                android:id="@+id/throttle_Txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Distance"
+                android:text="Throttling Neutral Position   "
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
-                android:id="@+id/odometerTxt2"
+                android:id="@+id/throttle_Txt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Odometer Result"
+                android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
         </TableRow>
@@ -81,17 +81,38 @@
             android:layout_margin="20dp" >
 
             <TextView
-                android:id="@+id/turnSignalStatusTxt"
+                android:id="@+id/left_signal_Txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Signal"
+                android:text="Left turn signal misuse "
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
-                android:id="@+id/turnSignalStatusTxt2"
+                android:id="@+id/left_signal_Txt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Result"
+                android:text="0"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp" >
+
+            <TextView
+                android:id="@+id/right_signal_Txt"
+                android:layout_width="282dp"
+                android:layout_height="wrap_content"
+                android:text="Right turn signal misuse "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/right_signal_Txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
         </TableRow>

@@ -141,9 +141,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                     // start the activity
                     mContext.startActivity(intent);
                 }
-                else if(mData.get(position).getTitle()=="Speed") {
-                    Toast.makeText(getApplicationContext(), "Speed", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(mContext, SpeedActivity.class);
+                else if(mData.get(position).getTitle()=="Errors") {
+                    Toast.makeText(getApplicationContext(), "Errors", Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(mContext, ErrorActivity.class);
 
                     // passing data to the book activity
                     intent.putExtra("Title", mData.get(position).getTitle());

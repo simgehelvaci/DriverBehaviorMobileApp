@@ -1,32 +1,17 @@
 package com.openxc.openxcstarter;
 
-import android.app.Application;
+import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.os.Environment;
 import android.os.IBinder;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.util.Pair;
 import android.view.Menu;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 
@@ -52,26 +37,10 @@ import com.openxc.measurements.VehicleSpeed;
 import com.openxc.measurements.IgnitionStatus;
 import com.openxc.measurements.SteeringWheelAngle;
 import com.openxc.units.Boolean;
-import com.openxc.measurements.Latitude;
-import com.openxc.measurements.Longitude;
 import com.openxc.measurements.TurnSignalStatus;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import com.openxc.openxcstarter.SQLiteDB;
-
-
-import static com.google.android.gms.analytics.internal.zzy.ex;
 
 public class BaseActivity extends AppCompatActivity {
     private static final String TAG = "StarterActivity";
@@ -80,12 +49,12 @@ public class BaseActivity extends AppCompatActivity {
     private String detectedBirthMiliSeconds;
     private String currentSignalName;
     private String currentBirthMiliSeconds;
-    private Contact contact;
-    private SQLiteDB sqLiteDB;
 
 
 
-
+    private int dataCount = 0;
+    private List<Pair<Double, Long>> timeSpeedList = new ArrayList<>();
+    private AlertDialog alertDialog;
     private VehicleManager mVehicleManager;
     private long gForceTimer = -1;
     private double gForceVelocity = -1;
@@ -93,6 +62,12 @@ public class BaseActivity extends AppCompatActivity {
     public static int statusPercentage = 100;
     private String gearPosition = "neutral";
     private Double pedalPos = 0.0;
+    public static int agresifCounter = 0;
+    public static int harshBrakeCounter = 0;
+    public static int aragazCounter = 0;
+    public static int wrongLeftSignalCounter=0;
+    public static int wrongRightSignalCounter=0;
+
     public static String IGNITION ;
     public static String DISTANCE;
     public static String FUEL;
@@ -111,6 +86,12 @@ public class BaseActivity extends AppCompatActivity {
 
     private double gForce = -1;
     private double weight = 0.5;
+    private Double threshold = 360.0;
+    private boolean turnStart = false;
+    private boolean turnCont = false;
+    private boolean turnEnd = false;
+    boolean isTurnLeft =false;
+    boolean isTurnRight = false;
 
 
     private boolean playing = false;
@@ -142,15 +123,22 @@ public class BaseActivity extends AppCompatActivity {
                             public void run() {
 
                                 if(System.currentTimeMillis()%2==0){
-                                    TURNSIGNALSTATUS ="LEFT";
+
+                                        TURNSIGNALSTATUS = "NULL";
+                                         onTurnSignalStatusUpdate();
+
+
+                                    }
+
+
+                                if(System.currentTimeMillis()%3==0) {
+                                    TURNSIGNALSTATUS = "RIGHT";
                                     onTurnSignalStatusUpdate();
+
                                     //writeToFile(TURNSIGNALSTATUS);
-
-
-
                                 }
-                                else{
-                                    TURNSIGNALSTATUS ="RIGHT";
+                                else if (System.currentTimeMillis()%3!=0 && System.currentTimeMillis()%2!=0  ){
+                                    TURNSIGNALSTATUS ="LEFT";
                                     onTurnSignalStatusUpdate();
                                     //writeToFile(TURNSIGNALSTATUS);
                                 }
@@ -196,55 +184,102 @@ public class BaseActivity extends AppCompatActivity {
                     }
                 });
 
+    }
 
 
 
+    public void checkThreshold (Double angle) {
+
+        if (angle > threshold || angle < -threshold) {
+
+            if (IGNITION.equals("OFF")) {       return;     }
+
+            if (turnStart) {    turnCont = true;    }
+
+            if (turnStart == false) {   turnStart = true;   /*turn baslıyor burdaki saniyeyi AL !! */ }
 
 
+        } else {
 
+                if (turnCont) {
+
+                        calcTurn(angle);
+                        turnEnd = true;   //Burada turn bitmiş oluyor.
+                        Toast.makeText(getApplicationContext(), "Turn end ", Toast.LENGTH_SHORT).show();
 
                 }
 
+                turnStart = false;
+                turnCont = false;
+        }
+
+    }
+    public void calcTurn(Double angle) {
+
+        //if (IGNITION.equals("OFF")) {   return;     }
+        if (angle > 0) {    isTurnRight = true;
+            onStatusRightUpdate();
+            Toast.makeText(getApplicationContext(), "Right Turn with Signal"+TURNSIGNALSTATUS , Toast.LENGTH_SHORT).show();
+
+
+
+            if(TURNSIGNALSTATUS!="RIGHT"){
+                wrongRightSignalCounter++;
+                onStatusRightSignalMisuseUpdate();
+                Toast.makeText(getApplicationContext(), "Right Signal misuse!", Toast.LENGTH_LONG).show();
+            }
+       }
+        else {  isTurnLeft=true;
+            onStatusLeftUpdate();
+
+            Toast.makeText(getApplicationContext(), "Left Turn with Signal"+TURNSIGNALSTATUS, Toast.LENGTH_SHORT).show();
+
+            if(TURNSIGNALSTATUS!="LEFT"){
+                wrongLeftSignalCounter++;
+                onStatusLeftSignalMisuseUpdate();
+                Toast.makeText(getApplicationContext(), "Left Signal misuse!", Toast.LENGTH_LONG).show();
+            }
+
+        }
+
+    }
 
 
     public int getStatus() {
         return status;
     }
 
-    public void onStatusUpdate() {
+    public void onStatusUpdate() {}
+    public void onStatusLeftUpdate() {}
+    public void onStatusRightUpdate() {}
 
-    }
-    public void onSteeringWheelAngleUpdate() {
+    public void onStatusAggUpdate() {}
+    public void onStatusHarshUpdate() {}
+    public void onStatusNeutUpdate() {}
+    public void onStatusLeftSignalMisuseUpdate(){}
+    public void onStatusRightSignalMisuseUpdate(){}
 
-    }
-    public void onIgnitionUpdate() {
+    public void onSteeringWheelAngleUpdate() {}
 
-    }
+    public void onIgnitionUpdate() {}
 
-    public void onDistanceUpdate() {
+    public void onHizUpdate() {}
 
-    }
-    public void onSpeedUpdate() {
+    public void onDistanceUpdate() {}
 
-    }
-    public void onTurnSignalStatusUpdate(){
+    public void onSpeedUpdate() {}
 
-    }
-    public void onEngineSpeedUpdate() {
+    public void onTurnSignalStatusUpdate(){}
 
-    }
-    public void onGearPositionUpdate() {
+    public void onEngineSpeedUpdate() {}
 
-    }
-    public void onFuelLevelUpdate() {
+    public void onGearPositionUpdate() {}
 
-    }
-    public void onAcceleratorPedalPositionUpdate() {
+    public void onFuelLevelUpdate() {}
 
-    }
-    public void onBrakePedalPositionUpdate() {
+    public void onAcceleratorPedalPositionUpdate() {}
 
-    }
+    public void onBrakePedalPositionUpdate() {}
 
 
 
@@ -255,8 +290,7 @@ public class BaseActivity extends AppCompatActivity {
         // sure to unbind from the service to avoid leaking memory
         if(mVehicleManager != null) {
             Log.i(TAG, "Unbinding from Vehicle Manager");
-            // Remember to remove your listeners, in typical Android
-            // fashion.
+
             mVehicleManager.removeListener(EngineSpeed.class,
                     mSpeedListener);
             unbindService(mConnection);
@@ -281,6 +315,8 @@ public class BaseActivity extends AppCompatActivity {
     long brakePedalDetectedTimer = -1;
     long ignitionOffDetectedTimer = -1;
     long ignitionOnDetectedTimer = -1;
+    long aggressiveDetectedTimer= -1;
+    long harshBrakeDetectedTimer=-1;
 
     private void neutralGasDetected(long time) {
         if (neutralGasDetectedTimer == -1) {
@@ -290,16 +326,20 @@ public class BaseActivity extends AppCompatActivity {
             //status = statusPercentage - 1;
             onStatusUpdate();
             //Toast.makeText(getApplicationContext(), "Throttle while gear neutral position", Toast.LENGTH_LONG).show();
+
             neutralGasDetectedTimer = -1;
+            aragazCounter++;
+            onStatusNeutUpdate();
+
         }
     }
 
-    private void hardBrakeDetected(long time) {
+    private void brakePedalUsageDetected(long time) {
         if (brakePedalDetectedTimer == -1) {
             brakePedalDetectedTimer = time;
         }
         else if (time - brakePedalDetectedTimer > 9500) {
-            Toast.makeText(getApplicationContext(), "Brake Pedal Overused!", Toast.LENGTH_LONG).show();
+           // Toast.makeText(getApplicationContext(), "Brake Pedal Overused!", Toast.LENGTH_LONG).show();
             status = statusPercentage - 1;
             onStatusUpdate();
 
@@ -309,13 +349,13 @@ public class BaseActivity extends AppCompatActivity {
 
 
     public boolean ignitionOffDetected(long time) {
-        if (ignitionOffDetectedTimer == -1) {
-            ignitionOffDetectedTimer = time;
 
-        }
+
+        if (ignitionOffDetectedTimer == -1) {   ignitionOffDetectedTimer = time;    }
+
         else if (time - ignitionOffDetectedTimer > 2000) {
 
-           // Toast.makeText(getApplicationContext(), "Ignition Off!", Toast.LENGTH_LONG).show();
+            // Toast.makeText(getApplicationContext(), "Ignition Off!", Toast.LENGTH_LONG).show();
 
             ignitionOffDetectedTimer = -1;
             playing = false;
@@ -369,6 +409,7 @@ public class BaseActivity extends AppCompatActivity {
 
 
     public boolean ignitionOnDetected(long time) {
+
         if (ignitionOnDetectedTimer == -1) {
             ignitionOnDetectedTimer = time;
 
@@ -389,15 +430,53 @@ public class BaseActivity extends AppCompatActivity {
     }
 
 
+    public boolean agressiveAccelerationDetected(long time) {
 
-    private void gForceTracker(double velocity, long birthtime) {
-        //gForce = ((velocity) - gForceVelocity) * (1000/(60 * 60)) / (1000 / ((birthtime) - gForceTimer));
-        gForce = gForce * 1/gConstant * (1 - weight) + weight * ((velocity) - gForceVelocity) / 3.6 * (1000 / Double.valueOf(birthtime - gForceTimer));
-        String gString = String.format(Locale.ENGLISH, "%.10f", gForce);
-        //Log.d("gforce", gString);
-        gForceTimer = birthtime;
-        gForceVelocity = velocity;
+        if (aggressiveDetectedTimer == -1) {
+            aggressiveDetectedTimer = time;
+
+        }
+        else if (time - aggressiveDetectedTimer > 100) {
+
+            // Toast.makeText(getApplicationContext(), "Ignition Start!", Toast.LENGTH_LONG).show();
+
+            aggressiveDetectedTimer = -1;
+            agresifCounter++;
+            onStatusAggUpdate();
+            Toast.makeText(getApplicationContext(), "Agressive Accelerate!", Toast.LENGTH_LONG).show();
+
+
+        }
+
+        return true;
     }
+
+    public boolean harshBrakeDetected(long time) {
+
+        if (harshBrakeDetectedTimer == -1) {
+            harshBrakeDetectedTimer = time;
+
+        }
+        else if (time - harshBrakeDetectedTimer > 100) {
+
+
+            harshBrakeDetectedTimer = -1;
+            harshBrakeCounter++;
+            onStatusHarshUpdate();
+            Toast.makeText(getApplicationContext(), "Harsh Brake!", Toast.LENGTH_LONG).show();
+
+
+        }
+
+        return true;
+    }
+
+
+
+
+
+
+
 
     public void checkTimeSince(long time, boolean over70){
         if (!acceleratorPedalOver70 && over70) {
@@ -406,27 +485,11 @@ public class BaseActivity extends AppCompatActivity {
         }
         else if (acceleratorPedalOver70 && over70){
             if (time - pedalOver70Timer > 7000){
-                Toast.makeText(getApplicationContext(), "Aggressive acceleration", Toast.LENGTH_LONG).show();
+
+                //Toast.makeText(getApplicationContext(), "Aggressive acceleration", Toast.LENGTH_LONG).show();
                 status = statusPercentage - 1;
                 onStatusUpdate();
-//                AlertDialog.Builder builder = new AlertDialog.Builder(findViewById(android.R.id.content).getContext());
-//                builder.setTitle("Aggressive acceleration");
-//                builder.setMessage("Losing points...");
-//                builder.setCancelable(true);
-//
-//                final AlertDialog closedialog= builder.create();
-//
-//                closedialog.show();
-//
-//                final Timer timer2 = new Timer();
-//                timer2.schedule(new TimerTask() {
-//                    public void run() {
-//                        closedialog.dismiss();
-//                        timer2.cancel(); //this will cancel the pedalOver70Timer of the system
-//                    }
-//                }, 5000);
-                Toast.makeText(getApplicationContext(), "Pedal position over 30", Toast.LENGTH_LONG).show();
-
+                //Toast.makeText(getApplicationContext(), "Pedal position over 30", Toast.LENGTH_LONG).show();
                 acceleratorPedalOver70 = false;
 
             }
@@ -454,9 +517,18 @@ public class BaseActivity extends AppCompatActivity {
                     // Finally, we've got a new value and we're running on the
                     // UI thread - we set the text of the EngineSpeed view to
                     // the latest value
+                    String s = steeringWheelAngle.getValue().toString();
+
+                    String[] sp = s.split(" ");
+
+                    Double sAngle = Double.parseDouble(sp[0]);
+
                     STEERINGWHEELANGLE= (steeringWheelAngle.getValue().toString());
+
                     onSteeringWheelAngleUpdate();
-                    //Log.d("angle:",STEERINGWHEELANGLE);
+
+                    checkThreshold(sAngle);
+
 
                 }
             });
@@ -480,7 +552,9 @@ public class BaseActivity extends AppCompatActivity {
                     // the latest value
                     TURNSIGNALSTATUS= (turnSignalStatus.getValue().toString());
                     onTurnSignalStatusUpdate();
-                    Log.d("TURNSIGNALSTATUS:",TURNSIGNALSTATUS);
+
+
+
 
                 }
             });
@@ -490,7 +564,7 @@ public class BaseActivity extends AppCompatActivity {
 
 
 
-    EngineSpeed.Listener mSpeedListener = new EngineSpeed.Listener() {
+    EngineSpeed.Listener mEngineSpeedListener = new EngineSpeed.Listener() {
         @Override
         public void receive(Measurement measurement) {
             // When we receive a new EngineSpeed value from the car, we want to
@@ -543,7 +617,6 @@ public class BaseActivity extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                 public void run() {
 
-
                     FUEL= (FuelLevelStatus.getValue().toString());
                     onFuelLevelUpdate();
 
@@ -553,33 +626,66 @@ public class BaseActivity extends AppCompatActivity {
         }
     };
 
-    VehicleSpeed.Listener mVehicleListener = new VehicleSpeed.Listener() {
+
+
+    private VehicleSpeed.Listener mSpeedListener = new VehicleSpeed.Listener() {
+
         @Override
         public void receive(Measurement measurement) {
-
-            // When we receive a new EngineSpeed value from the car, we want to
-            // update the UI to display the new value. First we cast the generic
-            // Measurement back to the type we know it to be, an EngineSpeed.
             final VehicleSpeed speed = (VehicleSpeed) measurement;
-            // In order to modify the UI, we have to make sure the code is
-            // running on the "UI thread" - Google around for this, it's an
-            // important concept in Android.
             runOnUiThread(new Runnable() {
                 public void run() {
-                    // Finally, we've got a new value and we're running on the
-                    // UI thread - we set the text of the EngineSpeed view to
-                    // the latest value
-                    gForceTracker(speed.getValue().doubleValue(), speed.getBirthtime());
-
-                    HIZ = speed.getValue().doubleValue();
                     SPEED= (speed.getValue().toString());
                     onSpeedUpdate();
-                    onHizUpdate();
 
+                    if (dataCount++ % 10 != 0) return;
+
+                    timeSpeedList.add(Pair.create(speed.getValue().doubleValue(), System
+                            .currentTimeMillis() / 1000));
+
+                    double averageAcceleration = 0;
+
+                    final double g = 9.81;
+
+                    for (Pair p : timeSpeedList) {
+                        Log.e("f", "" + p.first);
+                        Log.e("s", "" + p.second);
+                    }
+                    for (int i = timeSpeedList.size() - 1; i > Math.max(timeSpeedList.size() - 10,
+                            0); i--) {
+                                        Pair<Double, Long> p1 = timeSpeedList.get(i);
+                                        Pair<Double, Long> p2 = timeSpeedList.get(i - 1);
+                                        averageAcceleration += (p1.first - p2.first) / (p1.second -
+                                                p2.second);
+                                        Log.e("avg", "" + averageAcceleration);
+                    }
+
+                    averageAcceleration /= Math.min(10, timeSpeedList.size());
+
+                    Log.e("avgAcceleration", "" + averageAcceleration);
+
+                    if (averageAcceleration > 5) {
+
+                        agressiveAccelerationDetected(speed.getBirthtime());
+
+
+
+                    } else if (averageAcceleration < -0.8 * 5 ) {
+
+                        harshBrakeDetected(speed.getBirthtime());
+
+                    } else if (averageAcceleration < -1.2 * 5) {
+
+                        //Toast.makeText(getApplicationContext(), "Emergency! " +
+                          //      "car!", Toast.LENGTH_SHORT).show();
+
+                    }
                 }
             });
         }
     };
+
+
 
     AcceleratorPedalPosition.Listener mAcceleratorPedalPositionListener = new AcceleratorPedalPosition.Listener() {
         @Override
@@ -626,11 +732,11 @@ public class BaseActivity extends AppCompatActivity {
         if (lastDistance < 0) {
             lastDistance = d;
         }
-        else if (d - lastDistance > 0.3) {
+        else if (d - lastDistance > 10.9) {
 
                 status=statusPercentage ++;
                 lastDistance = -1.0;
-                Toast.makeText(getApplicationContext(), "+1 Point Good Driving!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "+1 Point Long Driving!", Toast.LENGTH_SHORT).show();
 
         }
     }
@@ -657,7 +763,7 @@ public class BaseActivity extends AppCompatActivity {
                     onBrakePedalPositionUpdate();
 
                     if (brakePos.booleanValue()) {
-                        hardBrakeDetected(position.getBirthtime());
+                        brakePedalUsageDetected(position.getBirthtime());
                     }
 
                 }
@@ -742,8 +848,8 @@ public class BaseActivity extends AppCompatActivity {
 
             mVehicleManager.addListener(SteeringWheelAngle.class,mSteeringWheelAngleListener);
             mVehicleManager.addListener(FuelLevel.class,  mFuelLevelListener);
-            mVehicleManager.addListener(EngineSpeed.class, mSpeedListener);
-            mVehicleManager.addListener(VehicleSpeed.class, mVehicleListener);
+            mVehicleManager.addListener(EngineSpeed.class, mEngineSpeedListener);
+            mVehicleManager.addListener(VehicleSpeed.class, mSpeedListener);
             mVehicleManager.addListener(Odometer.class, mOdometerListener);
             mVehicleManager.addListener(IgnitionStatus.class,mIgnitionListener);
             mVehicleManager.addListener(AcceleratorPedalPosition.class, mAcceleratorPedalPositionListener);

@@ -11,16 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="972539fa-1ea2-4f69-9b80-5713abf71ce8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/SpeedActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/speed_layout.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/AcceleratorPedalPosition.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/GearPosition.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/warning.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/SQLiteDB.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/SpeedActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/ErrorActivity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/speed_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/error_layout.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FuelLevel.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FuelLevel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/RecyclerViewAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/RecyclerViewAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Score.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Score.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/StarterActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/StarterActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fuel_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fuel_layout.xml" />
     </list>
     <ignored path="openxc-starter-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -138,41 +139,88 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BaseActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BaseActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="635" column="108" lean-forward="true" selection-start-line="635" selection-start-column="108" selection-end-line="635" selection-end-column="108" />
+            <state relative-caret-position="78">
+              <caret line="227" column="26" lean-forward="false" selection-start-line="227" selection-start-column="26" selection-end-line="227" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#gForceTracker#0;class#BaseActivity#0" expanded="false" />
-                <element signature="e#14782#14849#0" expanded="false" />
-                <element signature="e#15113#15175#0" expanded="false" />
-                <element signature="e#15396#15454#0" expanded="false" />
-                <element signature="e#15995#16062#0" expanded="false" />
-                <element signature="e#16320#16382#0" expanded="false" />
-                <element signature="e#16603#16661#0" expanded="false" />
-                <element signature="e#17185#17252#0" expanded="false" />
-                <element signature="e#17495#17557#0" expanded="false" />
-                <element signature="e#17778#17836#0" expanded="false" />
-                <element signature="e#19540#19607#0" expanded="false" />
-                <element signature="e#19846#19908#0" expanded="false" />
-                <element signature="e#20129#20187#0" expanded="false" />
-                <element signature="e#20711#22393#0" expanded="true" />
-                <element signature="e#21382#22375#0" expanded="true" />
-                <element signature="e#22374#22375#0" expanded="true" />
-                <element signature="e#22392#22393#0" expanded="true" />
-                <element signature="e#22944#23011#0" expanded="false" />
-                <element signature="e#23261#23323#0" expanded="false" />
-                <element signature="e#23544#23602#0" expanded="false" />
-                <element signature="e#24243#24310#0" expanded="false" />
-                <element signature="e#24544#24606#0" expanded="false" />
-                <element signature="e#24827#24885#0" expanded="false" />
-                <element signature="e#25521#25588#0" expanded="false" />
-                <element signature="e#25854#25916#0" expanded="false" />
-                <element signature="e#26136#26194#0" expanded="false" />
-                <element signature="class#26567:28611" expanded="false" />
-                <element signature="method#onCreateOptionsMenu#0;class#BaseActivity#0" expanded="false" />
+                <element signature="e#3814#5202#0" expanded="true" />
+                <element signature="e#4035#5085#0" expanded="true" />
+                <element signature="e#5084#5085#0" expanded="true" />
+                <element signature="e#5201#5202#0" expanded="true" />
+                <element signature="e#5398#5730#0" expanded="true" />
+                <element signature="e#5729#5730#0" expanded="true" />
+                <element signature="e#5821#6799#0" expanded="true" />
+                <element signature="e#6798#6799#0" expanded="true" />
+                <element signature="e#12239#12292#0" expanded="true" />
+                <element signature="e#13109#13156#0" expanded="true" />
+                <element signature="e#13335#13393#0" expanded="true" />
+                <element signature="e#13573#13628#0" expanded="true" />
+                <element signature="e#16357#17680#0" expanded="true" />
+                <element signature="e#16471#16538#0" expanded="false" />
+                <element signature="e#16802#16864#0" expanded="false" />
+                <element signature="e#17012#17662#0" expanded="true" />
+                <element signature="e#17085#17143#0" expanded="false" />
+                <element signature="e#17661#17662#0" expanded="true" />
+                <element signature="e#17679#17680#0" expanded="true" />
+                <element signature="e#17741#18826#0" expanded="true" />
+                <element signature="e#17860#17927#0" expanded="false" />
+                <element signature="e#18185#18247#0" expanded="false" />
+                <element signature="e#18395#18808#0" expanded="true" />
+                <element signature="e#18468#18526#0" expanded="false" />
+                <element signature="e#18807#18808#0" expanded="true" />
+                <element signature="e#18825#18826#0" expanded="true" />
+                <element signature="e#18880#19927#0" expanded="true" />
+                <element signature="e#18994#19061#0" expanded="false" />
+                <element signature="e#19304#19366#0" expanded="false" />
+                <element signature="e#19514#19909#0" expanded="true" />
+                <element signature="e#19587#19645#0" expanded="false" />
+                <element signature="e#19908#19909#0" expanded="true" />
+                <element signature="e#19926#19927#0" expanded="true" />
+                <element signature="e#19978#20727#0" expanded="true" />
+                <element signature="e#20189#20709#0" expanded="true" />
+                <element signature="e#20708#20709#0" expanded="true" />
+                <element signature="e#20726#20727#0" expanded="true" />
+                <element signature="e#20774#21184#0" expanded="true" />
+                <element signature="e#20971#21166#0" expanded="true" />
+                <element signature="e#21165#21166#0" expanded="true" />
+                <element signature="e#21183#21184#0" expanded="true" />
+                <element signature="e#21240#23348#0" expanded="true" />
+                <element signature="e#21437#23330#0" expanded="true" />
+                <element signature="e#23329#23330#0" expanded="true" />
+                <element signature="e#23347#23348#0" expanded="true" />
+                <element signature="e#23427#25109#0" expanded="true" />
+                <element signature="e#23555#23622#0" expanded="false" />
+                <element signature="e#23888#23950#0" expanded="false" />
+                <element signature="e#24098#25091#0" expanded="true" />
+                <element signature="e#24171#24229#0" expanded="false" />
+                <element signature="e#25090#25091#0" expanded="true" />
+                <element signature="e#25108#25109#0" expanded="true" />
+                <element signature="e#25543#26811#0" expanded="true" />
+                <element signature="e#25662#25729#0" expanded="false" />
+                <element signature="e#25979#26041#0" expanded="false" />
+                <element signature="e#26189#26793#0" expanded="true" />
+                <element signature="e#26262#26320#0" expanded="false" />
+                <element signature="e#26792#26793#0" expanded="true" />
+                <element signature="e#26810#26811#0" expanded="true" />
+                <element signature="e#26856#28053#0" expanded="true" />
+                <element signature="e#26967#27034#0" expanded="false" />
+                <element signature="e#27268#27330#0" expanded="false" />
+                <element signature="e#27478#28035#0" expanded="true" />
+                <element signature="e#27551#27609#0" expanded="false" />
+                <element signature="e#28034#28035#0" expanded="true" />
+                <element signature="e#28052#28053#0" expanded="true" />
+                <element signature="e#28118#29236#0" expanded="true" />
+                <element signature="e#28245#28312#0" expanded="false" />
+                <element signature="e#28578#28640#0" expanded="false" />
+                <element signature="e#28787#29216#0" expanded="true" />
+                <element signature="e#28860#28918#0" expanded="false" />
+                <element signature="e#29215#29216#0" expanded="true" />
+                <element signature="e#29235#29236#0" expanded="true" />
+                <element signature="e#29607#29671#0" expanded="false" />
+                <element signature="e#29901#29967#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -181,8 +229,8 @@
       <file leaf-file-name="fuel_layout.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fuel_layout.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="113" column="30" lean-forward="false" selection-start-line="113" selection-start-column="30" selection-end-line="113" selection-end-column="30" />
+            <state relative-caret-position="565">
+              <caret line="118" column="38" lean-forward="false" selection-start-line="118" selection-start-column="38" selection-end-line="118" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -191,15 +239,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="speed_layout.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/speed_layout.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="42" />
+      <file leaf-file-name="error_layout.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/error_layout.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="98" column="38" lean-forward="false" selection-start-line="98" selection-start-column="38" selection-end-line="98" selection-end-column="38" />
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="android-designer2">
+          <provider selected="true" editor-type-id="android-designer2">
             <state />
           </provider>
         </entry>
@@ -207,7 +255,7 @@
       <file leaf-file-name="brakepedal_layout.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/brakepedal_layout.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
+            <state relative-caret-position="511">
               <caret line="53" column="19" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="53" selection-end-column="19" />
               <folding />
             </state>
@@ -220,21 +268,21 @@
       <file leaf-file-name="Score.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Score.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="50" column="57" lean-forward="true" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
-              <folding />
+            <state relative-caret-position="660">
+              <caret line="50" column="57" lean-forward="false" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpeedActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/SpeedActivity.java">
+      <file leaf-file-name="ErrorActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/ErrorActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="678">
-              <caret line="57" column="5" lean-forward="false" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="52">
+              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -242,8 +290,8 @@
       <file leaf-file-name="BrakePedalPosition.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BrakePedalPosition.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="56" column="5" lean-forward="false" selection-start-line="52" selection-start-column="4" selection-end-line="56" selection-end-column="5" />
+            <state relative-caret-position="707">
+              <caret line="54" column="26" lean-forward="false" selection-start-line="52" selection-start-column="4" selection-end-line="56" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -252,25 +300,12 @@
       <file leaf-file-name="FuelLevel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FuelLevel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="67" />
+            <state relative-caret-position="450">
+              <caret line="76" column="5" lean-forward="false" selection-start-line="72" selection-start-column="3" selection-end-line="76" selection-end-column="5" />
               <folding>
-                <marker date="1525011678760" expanded="true" signature="1920:1926" ph="{...}" />
+                <marker date="1526150901820" expanded="true" signature="2327:2333" ph="{...}" />
               </folding>
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="64" column="46" lean-forward="false" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="android-manifest">
-            <state />
           </provider>
         </entry>
       </file>
@@ -278,7 +313,17 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/StarterActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="51" column="83" lean-forward="false" selection-start-line="51" selection-start-column="83" selection-end-line="51" selection-end-column="83" />
+              <caret line="51" column="36" lean-forward="false" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RecyclerViewAdapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/RecyclerViewAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="356">
+              <caret line="144" column="67" lean-forward="false" selection-start-line="144" selection-start-column="67" selection-end-line="144" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -298,27 +343,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>log</find>
-      <find>system</find>
-      <find>igni</find>
-      <find>ignitionOffDetected</find>
-      <find>mContext</find>
-      <find>acceleratorPedalOver70</find>
-      <find>70</find>
-      <find>lat</find>
-      <find>turnsignal</find>
-      <find>angle</find>
-      <find>writeToFile</find>
-      <find>score</find>
-      <find>statusPercentage</find>
-      <find>odometer</find>
-      <find>ignition</find>
-      <find>SIGN_</find>
-      <find>thro</find>
-      <find>pedalOver70Timer</find>
-      <find>over70</find>
-      <find>acc</find>
-      <find>checkTimeSince</find>
       <find>speed</find>
       <find>SPEED</find>
       <find>hız</find>
@@ -327,7 +351,28 @@
       <find>neutralGasDetected</find>
       <find>setStatus</find>
       <find>distan</find>
+      <find>context</find>
+      <find>enginespeed</find>
+      <find>menginespeed</find>
+      <find>mspeedlistener</find>
+      <find>hard</find>
+      <find>con</find>
+      <find>steering</find>
+      <find>ignition</find>
+      <find>calcDistance</find>
+      <find>ignitionOnDetected</find>
+      <find>agressiveAccelerationDetected</find>
+      <find>harshBrakeDetected</find>
+      <find>statusupdate</find>
       <find>status</find>
+      <find>onStatusUpdate()</find>
+      <find>neutral</find>
+      <find>throttle</find>
+      <find>signal</find>
+      <find>leftTurnSignalDetected</find>
+      <find>isTurn</find>
+      <find>leftTurnDetected</find>
+      <find>rightTurnDetected</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -2827,9 +2872,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values-v26/values-v26.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Achievements.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/ignition_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/gear_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fuelLevel_layout.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
@@ -2860,8 +2902,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/emergency_button.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/leaderboard_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_achievement.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fuel_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FuelLevel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FileReadWriteHelper.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Contact.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/ContactField.java" />
@@ -2871,18 +2911,23 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/LeaderBoard.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_starter.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/score_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/RecyclerViewAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/StarterActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/speed_layout.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/SpeedActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Score.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Toaster.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fuel_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FuelLevel.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/StarterActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/RecyclerViewAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/error_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/ErrorActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="89" />
+    <option name="x" value="81" />
     <option name="y" value="23" />
     <option name="width" value="1333" />
     <option name="height" value="817" />
@@ -2903,7 +2948,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2974,122 +3034,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="values" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="menu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -3126,22 +3070,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="AndroidView">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="openxcDrive-master-SimgeHlvc" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Gradle Scripts" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.android.AndroidBuildScriptsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3156,10 +3085,12 @@
     <property name="SearchEverywhereHistoryKey" value="config.txt&#9;null&#9;null&#10;sh&#9;PSI&#9;JAVA://sun.security.ec.ECDSASignature.SHA1" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
       <recent name="$PROJECT_DIR$/app/src/main/assets" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
-      <recent name="$PROJECT_DIR$/app/src" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi" />
     </key>
     <key name="android.template.packageName">
       <recent name="com.openxc.openxcstarter" />
@@ -3170,12 +3101,10 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.openxc.openxcstarter" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
-      <recent name="$PROJECT_DIR$/app/src/main/assets" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
-      <recent name="$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi" />
+      <recent name="$PROJECT_DIR$/app/src/main/assets" />
+      <recent name="$PROJECT_DIR$/app/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -3297,7 +3226,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525555049073" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1526158420707" />
       </method>
     </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Instrumented Tests">
@@ -3345,7 +3274,7 @@
       </Profilers>
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525555049073" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1526158420708" />
       </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -3528,7 +3457,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <method>
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1525555049074" />
+        <option name="com.android.instantApps.provision.BeforeRunTask" enabled="true" clearCache="false" clearProvisionedDevices="false" myTimestamp="1526158420708" />
       </method>
     </configuration>
     <list size="3">
@@ -3587,8 +3516,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="89" y="23" width="1333" height="817" extended-state="0" />
-    <editor active="true" />
+    <frame x="81" y="23" width="1333" height="817" extended-state="0" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -3605,13 +3533,13 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.02248996" sideWeight="0.49172577" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21182944" sideWeight="0.86513764" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24209079" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15955983" sideWeight="0.86513764" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22008254" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32737276" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37789905" sideWeight="0.5135909" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1967467" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.48802397" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30596438" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43328747" sideWeight="0.48802397" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904148" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -3675,19 +3603,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Book_Activity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -3931,12 +3851,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="98" column="31" lean-forward="false" selection-start-line="98" selection-start-column="31" selection-end-line="98" selection-end-column="31" />
-          <folding>
-            <element signature="e#1124#1125#0" expanded="false" />
-            <element signature="e#1193#1194#0" expanded="false" />
-            <element signature="e#1254#1255#0" expanded="false" />
-            <element signature="e#1300#1301#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4009,17 +3924,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/RecyclerViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="145" column="70" lean-forward="false" selection-start-line="145" selection-start-column="70" selection-end-line="145" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
+        <state relative-caret-position="960">
           <caret line="64" column="46" lean-forward="false" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
           <folding />
         </state>
@@ -4028,28 +3935,53 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/StarterActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/GearPosition.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/AcceleratorPedalPosition.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Score.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="51" column="83" lean-forward="false" selection-start-line="51" selection-start-column="83" selection-end-line="51" selection-end-column="83" />
+        <state relative-caret-position="660">
+          <caret line="50" column="57" lean-forward="false" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Toaster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fuel_layout.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BrakePedalPosition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="113" column="30" lean-forward="false" selection-start-line="113" selection-start-column="30" selection-end-line="113" selection-end-column="30" />
+        <state relative-caret-position="707">
+          <caret line="54" column="26" lean-forward="false" selection-start-line="52" selection-start-column="4" selection-end-line="56" selection-end-column="5" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/StarterActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="51" column="36" lean-forward="false" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/RecyclerViewAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="144" column="67" lean-forward="false" selection-start-line="144" selection-start-column="67" selection-end-line="144" selection-end-column="67" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/brakepedal_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
+        <state relative-caret-position="511">
           <caret line="53" column="19" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="53" selection-end-column="19" />
           <folding />
         </state>
@@ -4060,52 +3992,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/FuelLevel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="26" column="8" lean-forward="false" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="67" />
-          <folding>
-            <marker date="1525011678760" expanded="true" signature="1920:1926" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/GearPosition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="29" column="43" lean-forward="false" selection-start-line="29" selection-start-column="43" selection-end-line="30" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/AcceleratorPedalPosition.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="32" column="5" lean-forward="false" selection-start-line="31" selection-start-column="61" selection-end-line="32" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BrakePedalPosition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="56" column="5" lean-forward="false" selection-start-line="52" selection-start-column="4" selection-end-line="56" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/SpeedActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="678">
-          <caret line="57" column="5" lean-forward="false" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
+          <caret line="76" column="5" lean-forward="false" selection-start-line="72" selection-start-column="3" selection-end-line="76" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1526150901820" expanded="true" signature="2327:2333" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/speed_layout.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/error_layout.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="98" column="38" lean-forward="false" selection-start-line="98" selection-start-column="38" selection-end-line="98" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fuel_layout.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="42" />
+        <state relative-caret-position="565">
+          <caret line="118" column="38" lean-forward="false" selection-start-line="118" selection-start-column="38" selection-end-line="118" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -4113,49 +4022,96 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/Score.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="50" column="57" lean-forward="true" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
-          <folding />
+        <state relative-caret-position="78">
+          <caret line="227" column="26" lean-forward="false" selection-start-line="227" selection-start-column="26" selection-end-line="227" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3814#5202#0" expanded="true" />
+            <element signature="e#4035#5085#0" expanded="true" />
+            <element signature="e#5084#5085#0" expanded="true" />
+            <element signature="e#5201#5202#0" expanded="true" />
+            <element signature="e#5398#5730#0" expanded="true" />
+            <element signature="e#5729#5730#0" expanded="true" />
+            <element signature="e#5821#6799#0" expanded="true" />
+            <element signature="e#6798#6799#0" expanded="true" />
+            <element signature="e#12239#12292#0" expanded="true" />
+            <element signature="e#13109#13156#0" expanded="true" />
+            <element signature="e#13335#13393#0" expanded="true" />
+            <element signature="e#13573#13628#0" expanded="true" />
+            <element signature="e#16357#17680#0" expanded="true" />
+            <element signature="e#16471#16538#0" expanded="false" />
+            <element signature="e#16802#16864#0" expanded="false" />
+            <element signature="e#17012#17662#0" expanded="true" />
+            <element signature="e#17085#17143#0" expanded="false" />
+            <element signature="e#17661#17662#0" expanded="true" />
+            <element signature="e#17679#17680#0" expanded="true" />
+            <element signature="e#17741#18826#0" expanded="true" />
+            <element signature="e#17860#17927#0" expanded="false" />
+            <element signature="e#18185#18247#0" expanded="false" />
+            <element signature="e#18395#18808#0" expanded="true" />
+            <element signature="e#18468#18526#0" expanded="false" />
+            <element signature="e#18807#18808#0" expanded="true" />
+            <element signature="e#18825#18826#0" expanded="true" />
+            <element signature="e#18880#19927#0" expanded="true" />
+            <element signature="e#18994#19061#0" expanded="false" />
+            <element signature="e#19304#19366#0" expanded="false" />
+            <element signature="e#19514#19909#0" expanded="true" />
+            <element signature="e#19587#19645#0" expanded="false" />
+            <element signature="e#19908#19909#0" expanded="true" />
+            <element signature="e#19926#19927#0" expanded="true" />
+            <element signature="e#19978#20727#0" expanded="true" />
+            <element signature="e#20189#20709#0" expanded="true" />
+            <element signature="e#20708#20709#0" expanded="true" />
+            <element signature="e#20726#20727#0" expanded="true" />
+            <element signature="e#20774#21184#0" expanded="true" />
+            <element signature="e#20971#21166#0" expanded="true" />
+            <element signature="e#21165#21166#0" expanded="true" />
+            <element signature="e#21183#21184#0" expanded="true" />
+            <element signature="e#21240#23348#0" expanded="true" />
+            <element signature="e#21437#23330#0" expanded="true" />
+            <element signature="e#23329#23330#0" expanded="true" />
+            <element signature="e#23347#23348#0" expanded="true" />
+            <element signature="e#23427#25109#0" expanded="true" />
+            <element signature="e#23555#23622#0" expanded="false" />
+            <element signature="e#23888#23950#0" expanded="false" />
+            <element signature="e#24098#25091#0" expanded="true" />
+            <element signature="e#24171#24229#0" expanded="false" />
+            <element signature="e#25090#25091#0" expanded="true" />
+            <element signature="e#25108#25109#0" expanded="true" />
+            <element signature="e#25543#26811#0" expanded="true" />
+            <element signature="e#25662#25729#0" expanded="false" />
+            <element signature="e#25979#26041#0" expanded="false" />
+            <element signature="e#26189#26793#0" expanded="true" />
+            <element signature="e#26262#26320#0" expanded="false" />
+            <element signature="e#26792#26793#0" expanded="true" />
+            <element signature="e#26810#26811#0" expanded="true" />
+            <element signature="e#26856#28053#0" expanded="true" />
+            <element signature="e#26967#27034#0" expanded="false" />
+            <element signature="e#27268#27330#0" expanded="false" />
+            <element signature="e#27478#28035#0" expanded="true" />
+            <element signature="e#27551#27609#0" expanded="false" />
+            <element signature="e#28034#28035#0" expanded="true" />
+            <element signature="e#28052#28053#0" expanded="true" />
+            <element signature="e#28118#29236#0" expanded="true" />
+            <element signature="e#28245#28312#0" expanded="false" />
+            <element signature="e#28578#28640#0" expanded="false" />
+            <element signature="e#28787#29216#0" expanded="true" />
+            <element signature="e#28860#28918#0" expanded="false" />
+            <element signature="e#29215#29216#0" expanded="true" />
+            <element signature="e#29235#29236#0" expanded="true" />
+            <element signature="e#29607#29671#0" expanded="false" />
+            <element signature="e#29901#29967#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/BaseActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/openxc/openxcstarter/ErrorActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="635" column="108" lean-forward="true" selection-start-line="635" selection-start-column="108" selection-end-line="635" selection-end-column="108" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#gForceTracker#0;class#BaseActivity#0" expanded="false" />
-            <element signature="e#14782#14849#0" expanded="false" />
-            <element signature="e#15113#15175#0" expanded="false" />
-            <element signature="e#15396#15454#0" expanded="false" />
-            <element signature="e#15995#16062#0" expanded="false" />
-            <element signature="e#16320#16382#0" expanded="false" />
-            <element signature="e#16603#16661#0" expanded="false" />
-            <element signature="e#17185#17252#0" expanded="false" />
-            <element signature="e#17495#17557#0" expanded="false" />
-            <element signature="e#17778#17836#0" expanded="false" />
-            <element signature="e#19540#19607#0" expanded="false" />
-            <element signature="e#19846#19908#0" expanded="false" />
-            <element signature="e#20129#20187#0" expanded="false" />
-            <element signature="e#20711#22393#0" expanded="true" />
-            <element signature="e#21382#22375#0" expanded="true" />
-            <element signature="e#22374#22375#0" expanded="true" />
-            <element signature="e#22392#22393#0" expanded="true" />
-            <element signature="e#22944#23011#0" expanded="false" />
-            <element signature="e#23261#23323#0" expanded="false" />
-            <element signature="e#23544#23602#0" expanded="false" />
-            <element signature="e#24243#24310#0" expanded="false" />
-            <element signature="e#24544#24606#0" expanded="false" />
-            <element signature="e#24827#24885#0" expanded="false" />
-            <element signature="e#25521#25588#0" expanded="false" />
-            <element signature="e#25854#25916#0" expanded="false" />
-            <element signature="e#26136#26194#0" expanded="false" />
-            <element signature="class#26567:28611" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#BaseActivity#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="52">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

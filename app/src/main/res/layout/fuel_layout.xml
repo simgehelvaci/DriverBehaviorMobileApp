@@ -115,6 +115,28 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
         </TableRow>
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            tools:ignore="DuplicateIds">
+
+            <TextView
+                android:id="@+id/accelerator_pedalTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Accelerator Pedal "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/accelerator_pedalTxt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Accelerator Pedal Result"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        </TableRow>
     </TableLayout>
 
 
